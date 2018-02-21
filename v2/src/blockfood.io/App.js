@@ -1,15 +1,15 @@
 import React from 'react'
-import {Router, Link} from 'react-static'
+import {Router} from 'react-static'
 import Routes from 'react-static-routes'
+
+import Header from './components/header/Header'
+
+import './App.scss'
 
 const App = () => (
     <Router>
         <div>
-            <nav>
-                <Link to="/">Home</Link>
-                <Link to="/terms">Terms of service</Link>
-                <Link to="/privacy">Privacy policy</Link>
-            </nav>
+            <Header/>
             <div className="content">
                 <Routes/>
             </div>

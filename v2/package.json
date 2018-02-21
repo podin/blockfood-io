@@ -21,7 +21,8 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-router": "^4.2.0",
-    "react-static": "^5"
+    "react-static": "^5.1.14",
+    "reset-css": "^2.2.1"
   },
   "devDependencies": {
     "eslint-config-react-tools": "1.x.x",

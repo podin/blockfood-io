@@ -1,0 +1,1 @@
+export const cleanUrl = (url) => url.replace(/\\/g, '/')

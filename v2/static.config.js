@@ -9,7 +9,7 @@ export default {
         title: 'BlockFood - Decentralized Food Ordering & Delivery Platform'
     }),
     getRoutes: async() => {
-        const files = await glob('src/pages/*.js')
+        const files = await glob('src/blockfood.io/pages/*.js')
 
         return files.map(file => {
             const filename = path.basename(file, path.extname(file))
