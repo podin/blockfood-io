@@ -1,0 +1,35 @@
+{
+  "name": "blockfood-io",
+  "version": "2.0.0",
+  "description": "This website is the central point of information regarding the BlockFood project.",
+  "scripts": {
+    "start": "react-static start",
+    "build": "react-static build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BlockFood/blockfood-io.git"
+  },
+  "author": "The Blockfood Team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BlockFood/blockfood-io/issues"
+  },
+  "homepage": "https://github.com/BlockFood/blockfood-io#readme",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-router": "^4.2.0",
+    "react-static": "^5"
+  },
+  "devDependencies": {
+    "eslint-config-react-tools": "1.x.x",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "glob-promise": "^3.3.0",
+    "node-sass": "^4.7.2",
+    "react-static": "^5.1.14",
+    "sass-loader": "^6.0.6",
+    "serve": "^6.1.0"
+  }
+}
