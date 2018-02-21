@@ -19,6 +19,12 @@ export default (config, {defaultLoaders, stage}) => {
                                 }
                             },
                             {
+                                loader: 'postcss-loader',
+                                options: {
+                                    plugins: (loader) => [require('autoprefixer')()]
+                                }
+                            },
+                            {
                                 loader: 'sass-loader',
                                 options: {includePaths: ['src/']}
                             }

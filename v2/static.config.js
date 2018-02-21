@@ -1,10 +1,13 @@
 import glob from 'glob-promise'
 import path from 'path'
 
-import webpack from './script/webpack.config'
+import webpack from './webpack/webpack.config'
 
 export default {
     siteRoot: 'https://blockfood.io/',
+    paths: {
+        public: 'src/public'
+    },
     getSiteData: () => ({
         title: 'BlockFood - Decentralized Food Ordering & Delivery Platform'
     }),
