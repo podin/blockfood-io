@@ -63,14 +63,14 @@ export default class HeaderNavigationHandler {
     }
 
     _scrollToTop() {
-        scrollTo(0)
+        scrollTo(0, {duration: 0})
     }
 
     _scrollOnClickIfAlreadyActive(event) {
         this._setActiveLinkElement(event.target)
 
         if (event.target.href === window.location.href) {
-            scrollTo(document.querySelector(`#${event.target.href.split('#')[1]}`), {offset: -150})
+            scrollTo(document.querySelector(`#${event.target.href.split('#')[1]}`), {offset: -150, duration: 0})
         }
     }
 

@@ -21,7 +21,7 @@ export default class Header extends React.Component {
                     <div id="bfio-logo">
                         <Link to="/">
                             <svg>
-                                <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref={cleanUrl(icon_Bf + '#logo')}/>
+                                <use xlinkHref={cleanUrl(icon_Bf + '#logo')}/>
                             </svg>
                         </Link>
                     </div>
