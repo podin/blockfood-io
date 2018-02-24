@@ -1,14 +1,10 @@
 @import '../../style/Variables';
 
 #bfio-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #fff;
   border-bottom: 4px solid $mainColor;
 
   .header-content {
+    width: 95%;
     max-width: $maxWidth;
     margin: 0 auto;
     display: flex;
@@ -24,20 +20,21 @@
 
       a {
         padding-bottom: 2px;
-        font-size: 18px;
+        font-size: 1.25em;
         color: $mainColor;
         font-weight: 700;
         text-decoration: none;
         font-family: "Open Sans", sans-serif;
         border-bottom: 3px solid transparent;
         transition: border-bottom-color 0.5s;
+        margin-right: 30px;
 
         &.active, &:hover {
           border-bottom: 3px solid $mainColor;
         }
 
-        &:not(:last-of-type) {
-          margin-right: 30px;
+        &:last-of-type {
+          margin-right: 0 !important;
         }
       }
     }
@@ -53,11 +50,8 @@
       align-items: flex-start;
       justify-content: center;
       z-index: 1;
-
-      svg {
-        transform-origin: top center;
-        transition: transform 0.5s;
-      }
+      transform-origin: top center;
+      transition: transform 0.5s;
     }
 
     .links {
@@ -67,44 +61,117 @@
       justify-content: flex-end;
       z-index: 2;
 
-      ul {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
+      a {
+        text-decoration: none;
+        color: $mainColor;
+        margin-left: 10px;
 
-        li {
-          transform: scale(1.25);
-          transition: transform 0.3s;
+        &:first-of-type {
+          margin-left: 0 !important;
+        }
+      }
 
-          a {
-            color: $mainColor;
-            padding: 10px;
-          }
+      a:not(.subscribe) {
+        padding: 10px;
+        transform: scale(1.25);
+        transition: transform 0.3s;
 
-          &:hover {
-            transform: scale(1.75);
-          }
-
-          &:not(:first-of-type) {
-            margin-left: 20px;
-          }
+        &:hover {
+          transform: scale(1.75);
         }
       }
 
       .subscribe {
-        text-decoration: none;
         color: $mainColor;
-        margin-left: 50px;
+        margin-left: 30px;
         font-weight: bold;
         padding: 10px 20px;
         border: 2px solid $mainColor;
         border-radius: 5px;
         font-size: 1.1em;
-        
+
         &:hover {
           background: $mainColor;
           color: white;
         }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    .header-content {
+      padding-top: 30px;
+      padding-bottom: 15px;
+
+      #bfio-logo {
+        transform: scale(0.8);
+      }
+
+      nav {
+        font-size: 0.9em;
+
+        a {
+          margin-right: 25px;
+        }
+      }
+
+      .links {
+        a {
+          margin-left: 15px;
+        }
+
+        .subscribe {
+          margin-left: 25px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .header-content {
+      padding-top: 25px;
+      padding-bottom: 10px;
+
+      #bfio-logo {
+        transform: scale(0.7);
+      }
+
+      nav {
+        font-size: 0.8em;
+
+        a {
+          margin-right: 12px;
+        }
+      }
+
+      .links {
+        font-size: 0.9em;
+
+        a {
+          margin-left: 0;
+        }
+
+        .subscribe {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .header-content {
+      justify-content: flex-end;
+      min-height: 40px;
+      transition: none;
+      padding-top: 8px;
+      padding-bottom: 8px;
+
+      nav, .links {
+        display: none;
+      }
+
+      #bfio-logo {
+        transform: scale(0.6);
       }
     }
   }
@@ -115,7 +182,7 @@
     padding-top: 8px;
     padding-bottom: 8px;
 
-    #bfio-logo svg {
+    #bfio-logo {
       transform: scale(0.6);
     }
   }

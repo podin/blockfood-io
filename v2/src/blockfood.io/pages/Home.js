@@ -1,6 +1,6 @@
 import React from 'react'
 
-import HeaderNavigationHandler from '../components/header/HeaderNavigationHandler'
+import HeaderNavigationHandler from '../components/header/handlers/HeaderNavigationHandler'
 
 export default class Home extends React.Component {
     componentDidMount() {

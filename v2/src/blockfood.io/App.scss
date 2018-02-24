@@ -1,15 +1,67 @@
 @import '../../node_modules/reset-css/reset';
+@import './style/Variables';
 
 body {
   font-family: "Open Sans", sans-serif;
   overflow-x: hidden;
   overflow-y: auto;
+  background: black;
 }
 
-#bfio-content {
-  padding-top: 150px;
+#root {
+  #bfio-wrapper {
+    & > * {
+      transform: translateX(0);
+      transition: transform 0.5s;
 
-  * > div {
-    min-height: 1000px; // TODO: remove (temporary fake page height)
+      &.offsetX {
+        transform: translateX(-$sidebarHeaderWidth);
+      }
+    }
+
+    #bfio-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #fff;
+      z-index: 4;
+    }
+
+    #bfio-content {
+      position: relative;
+      z-index: 3;
+      padding-top: 150px;
+      background: white;
+      overflow: hidden;
+
+      * > div {
+        min-height: 1000px; // TODO: remove (temporary fake page height)
+      }
+    }
+  }
+
+  #bfio-sidebar-header-toggle {
+    z-index: 5;
+  }
+
+  #bfio-wrapper-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 2;
+  }
+
+  #bfio-sidebar-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: 1;
   }
 }

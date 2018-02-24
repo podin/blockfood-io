@@ -2,6 +2,9 @@ import React from 'react'
 import {Link} from 'react-static'
 import {cleanUrl} from '../../utils/Utils'
 
+import HeaderData from './data/HeaderData.json'
+import HeaderLink from './HeaderLink'
+
 import './Header.scss'
 
 import icon_Bf from '../../style/images/icon_Bf.svg'
@@ -26,35 +29,14 @@ export default class Header extends React.Component {
                         </Link>
                     </div>
                     <nav id="bfio-header-nav">
-                        <Link to="/#about">Project</Link>
-                        <Link to="/#roadmap">Road map</Link>
-                        <Link to="/#team">Team</Link>
-                        <Link to="/whitepaper">White paper</Link>
+                        {_.map(HeaderData.left, data => (
+                            <HeaderLink key={data.id} {...data}/>
+                        ))}
                     </nav>
                     <div className="links">
-                        <ul>
-                            <li>
-                                <a href="https://twitter.com/BlockFood" target="_blank">
-                                    <i className="fab fa-twitter"/>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/BlockFood" target="_blank">
-                                    <i className="fab fa-github"/>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://medium.com/blockfood" target="_blank">
-                                    <i className="fab fa-medium-m"/>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://t.me/blockfood" target="_blank">
-                                    <i className="fab fa-telegram"/>
-                                </a>
-                            </li>
-                        </ul>
-                        <Link to="/#subscribe" className="subscribe">Subscribe</Link>
+                        {_.map(HeaderData.right, data => (
+                            <HeaderLink key={data.id} {...data}/>
+                        ))}
                     </div>
                 </div>
             </header>
