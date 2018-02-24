@@ -6,6 +6,7 @@ export default class HeaderNavigationHandler {
         this.currentActiveLinkElement = null
 
         this._updateActiveLink = _.debounce(this._updateActiveLink.bind(this), 100)
+        this._scrollToTop = this._scrollToTop.bind(this)
         this._scrollOnClickIfAlreadyActive = this._scrollOnClickIfAlreadyActive.bind(this)
 
         this._registerElements()
@@ -17,6 +18,7 @@ export default class HeaderNavigationHandler {
         this.linkHrefs = []
         this.linkElements = {}
         this.anchorElements = {}
+        this.linkTopElement = document.querySelector('#bfio-logo a')
 
         _.map(document.querySelectorAll('#bfio-header-nav a'), linkElement => {
             if (linkElement.href.indexOf('#') !== -1) {
@@ -60,6 +62,10 @@ export default class HeaderNavigationHandler {
         this._setActiveLinkElement(visibleLinkElement)
     }
 
+    _scrollToTop() {
+        scrollTo(0)
+    }
+
     _scrollOnClickIfAlreadyActive(event) {
         this._setActiveLinkElement(event.target)
 
@@ -72,6 +78,7 @@ export default class HeaderNavigationHandler {
         _.forEach(this.linkElements, linkElement => {
             linkElement.addEventListener('click', this._scrollOnClickIfAlreadyActive, false)
         })
+        this.linkTopElement.addEventListener('click', this._scrollToTop, false)
         window.addEventListener('scroll', this._updateActiveLink, false)
     }
 
@@ -81,6 +88,7 @@ export default class HeaderNavigationHandler {
         _.forEach(this.linkElements, linkElement => {
             linkElement.removeEventListener('click', this._scrollOnClickIfAlreadyActive, false)
         })
+        this.linkTopElement.removeEventListener('click', this._scrollToTop, false)
         window.removeEventListener('scroll', this._updateActiveLink, false)
     }
 }
