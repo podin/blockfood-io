@@ -4,7 +4,8 @@
   "description": "This website is the central point of information regarding the BlockFood project.",
   "scripts": {
     "start": "react-static start",
-    "build": "react-static build"
+    "build": "react-static build",
+    "build-test": "react-static build --staging && node scripts/server.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
   },
   "devDependencies": {
     "eslint-config-react-tools": "1.x.x",
+    "express": "^4.16.2",
     "extract-text-webpack-plugin": "^3.0.2",
     "glob-promise": "^3.3.0",
     "node-sass": "^4.7.2",

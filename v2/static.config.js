@@ -1,7 +1,7 @@
 import glob from 'glob-promise'
 import path from 'path'
 
-import webpack from './webpack/webpack.config'
+import webpack from './scripts/webpack/webpack.config'
 
 import Document from './src/blockfood.io/Document'
 
