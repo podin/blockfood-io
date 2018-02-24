@@ -33,12 +33,28 @@ export default class Header extends React.Component {
                     </nav>
                     <div className="links">
                         <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
+                            <li>
+                                <a href="https://twitter.com/BlockFood" target="_blank">
+                                    <i className="fab fa-twitter"/>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/BlockFood" target="_blank">
+                                    <i className="fab fa-github"/>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://medium.com/blockfood" target="_blank">
+                                    <i className="fab fa-medium-m"/>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://t.me/blockfood" target="_blank">
+                                    <i className="fab fa-telegram"/>
+                                </a>
+                            </li>
                         </ul>
-                        <div className="subscibe">Subscribe</div>
+                        <Link to="/#subscribe" className="subscribe">Subscribe</Link>
                     </div>
                 </div>
             </header>
