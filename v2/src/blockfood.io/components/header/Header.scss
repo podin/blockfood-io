@@ -28,6 +28,7 @@
         border-bottom: 3px solid transparent;
         transition: border-bottom-color 0.5s;
         margin-right: 30px;
+        user-select: none;
 
         &.active, &:hover {
           border-bottom: 3px solid $mainColor;
@@ -50,8 +51,12 @@
       align-items: flex-start;
       justify-content: center;
       z-index: 1;
-      transform-origin: top center;
-      transition: transform 0.5s;
+
+      a {
+        transform-origin: top center;
+        transition: transform 0.5s;
+        user-select: none;
+      }
     }
 
     .links {
@@ -65,6 +70,7 @@
         text-decoration: none;
         color: $mainColor;
         margin-left: 10px;
+        user-select: none;
 
         &:first-of-type {
           margin-left: 0 !important;
@@ -103,7 +109,7 @@
       padding-top: 30px;
       padding-bottom: 15px;
 
-      #bfio-logo {
+      #bfio-logo a {
         transform: scale(0.8);
       }
 
@@ -132,7 +138,7 @@
       padding-top: 25px;
       padding-bottom: 10px;
 
-      #bfio-logo {
+      #bfio-logo a {
         transform: scale(0.7);
       }
 
@@ -170,7 +176,7 @@
         display: none;
       }
 
-      #bfio-logo {
+      #bfio-logo a {
         transform: scale(0.6);
       }
     }
@@ -182,7 +188,7 @@
     padding-top: 8px;
     padding-bottom: 8px;
 
-    #bfio-logo {
+    #bfio-logo a {
       transform: scale(0.6);
     }
   }

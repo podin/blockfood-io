@@ -17,21 +17,27 @@ export default class SidebarHeader extends React.Component {
         this.toggleNavBar = this.toggleNavBar.bind(this)
     }
 
-    toggleNavBar() {
-        const visible = !this.state.visible
-
+    setNavBarVisible(visible) {
         _.forEach(this.rootElements, element => element.className = visible ? 'offsetX' : '')
         this.setState({visible})
     }
 
+    toggleNavBar() {
+        this.setNavBarVisible(!this.state.visible)
+    }
+
+    closeIfVisible(event) {
+        if (event.target !== this.btnElement && !this.btnElement.contains(event.target) && this.state.visible) {
+            this.setNavBarVisible(false)
+        }
+    }
+
     componentDidMount() {
+        this.btnElement = document.querySelector('#bfio-sidebar-header-toggle')
         this.rootElements = document.querySelectorAll('#bfio-wrapper > *')
 
-        window.addEventListener('scroll', () => {
-            if (this.state.visible) {
-                this.toggleNavBar()
-            }
-        }, false)
+        window.addEventListener('scroll', this.closeIfVisible.bind(this), false)
+        window.addEventListener('click', this.closeIfVisible.bind(this), false)
     }
 
     render() {
