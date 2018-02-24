@@ -3,14 +3,14 @@ import path from 'path'
 
 import webpack from './webpack/webpack.config'
 
+import Document from './src/blockfood.io/Document'
+
 export default {
     siteRoot: 'https://blockfood.io/',
     paths: {
         public: 'src/public'
     },
-    getSiteData: () => ({
-        title: 'BlockFood - Decentralized Food Ordering & Delivery Platform'
-    }),
+    Document,
     getRoutes: async() => {
         const files = await glob('src/blockfood.io/pages/*.js')
 

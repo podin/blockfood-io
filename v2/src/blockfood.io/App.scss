@@ -1,6 +1,15 @@
 @import '../../node_modules/reset-css/reset';
 
-// TODO: remove (temporary fake page height)
-.content {
-  min-height: 5000px;
+body {
+  font-family: "Open Sans", sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#bfio-content {
+  padding-top: 150px;
+
+  * > div {
+    min-height: 1000px; // TODO: remove (temporary fake page height)
+  }
 }

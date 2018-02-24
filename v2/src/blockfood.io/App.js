@@ -7,10 +7,10 @@ import Header from './components/header/Header'
 import './App.scss'
 
 const App = () => (
-    <Router>
+    <Router scrollToHashOffset={-150}>
         <div>
             <Header/>
-            <div className="content">
+            <div id="bfio-content">
                 <Routes/>
             </div>
         </div>

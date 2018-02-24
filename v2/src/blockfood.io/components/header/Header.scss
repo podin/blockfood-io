@@ -17,6 +17,26 @@
 
     nav {
       flex: 0 0 40%;
+      margin-top: 15px;
+
+      a {
+        padding-bottom: 3px;
+        font-size: 18px;
+        color: $mainColor;
+        font-weight: 700;
+        text-decoration: none;
+        font-family: "Open Sans", sans-serif;
+        border-bottom: 3px solid transparent;
+        transition: border-bottom-color 0.5s;
+
+        &.active, &:hover {
+          border-bottom: 3px solid $mainColor;
+        }
+
+        &:not(:last-of-type) {
+          margin-right: 30px;
+        }
+      }
     }
 
     #bfio-logo {
