@@ -13,7 +13,7 @@ export default class Home extends React.Component {
 
     render() {
         return (
-            <div>
+            <div id="bfio-home">
                 <div>Intro</div>
                 <div id="about" style={{backgroundColor: '#5c5190'}}>About</div>
                 <div id="roadmap" style={{backgroundColor: '#4b3f80'}}>Roadmap</div>

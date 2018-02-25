@@ -5,6 +5,7 @@ import Routes from 'react-static-routes'
 import Loader from './components/loader/Loader'
 import Header from './components/header/Header'
 import SidebarHeader from './components/header/SidebarHeader'
+import Footer from './components/footer/Footer'
 
 import './App.scss'
 
@@ -16,6 +17,7 @@ const App = () => (
                 <Header/>
                 <div id="bfio-content">
                     <Routes/>
+                    <Footer/>
                 </div>
             </div>
             <SidebarHeader/>

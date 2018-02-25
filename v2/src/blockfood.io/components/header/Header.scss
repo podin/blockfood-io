@@ -78,12 +78,13 @@
       }
 
       a:not(.subscribe) {
-        padding: 10px;
-        transform: scale(1.25);
-        transition: transform 0.3s;
+        font-size: 1.5em;
+        padding: 5px 10px;
+        border-bottom: 3px solid transparent;
+        transition: border-bottom-color 0.5s;
 
         &:hover {
-          transform: scale(1.75);
+          border-bottom: 3px solid $mainColor;
         }
       }
 
