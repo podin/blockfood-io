@@ -1,8 +1,8 @@
 import * as _ from 'lodash'
 import React from 'react'
 
-import HeaderLink from './HeaderLink'
-import HeaderData from './data/HeaderData.json'
+import {DATA_LINKS_SIDEBAR_HEADER} from '../../data/DataLinks'
+import LinkWrapper from '../linkWrapper/LinkWrapper'
 
 import './SidebarHeader.scss'
 
@@ -50,9 +50,7 @@ export default class SidebarHeader extends React.Component {
                 </div>
                 <div id="bfio-sidebar-header">
                     <nav>
-                        {_.map([...HeaderData.left, ...HeaderData.right], data => (
-                            <HeaderLink key={data.id} {...data}/>
-                        ))}
+                        {LinkWrapper.fromData(DATA_LINKS_SIDEBAR_HEADER)}
                     </nav>
                 </div>
             </React.Fragment>
