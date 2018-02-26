@@ -12,17 +12,18 @@ export default {
     },
     Document,
     getRoutes: async() => {
-        const files = await glob('src/blockfood.io/pages/*.js')
+        const files = await glob('src/blockfood.io/pages/*')
 
         return files.map(file => {
-            const filename = path.basename(file, path.extname(file))
+            const filename = path.basename(file)
+            const component = path.join(file, filename.replace(/\b\w/g, l => l.toUpperCase()) + '.js')
 
             if (filename === '404') {
-                return {is404: true, component: file}
+                return {is404: true, component}
             }
             else {
-                const path = filename === 'Home' ? '/' : filename.toLowerCase()
-                return {path, component: file}
+                const route = filename === 'home' ? '/' : filename
+                return {path: route, component}
             }
         })
     },

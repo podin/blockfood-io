@@ -1,0 +1,17 @@
+#bfio-home {
+  & > div {
+    min-height: 1000px;
+
+    &:nth-of-type(2) {
+      background: #5c5190;
+    }
+
+    &:nth-of-type(3) {
+      background: #4b3f80;
+    }
+
+    &:nth-of-type(4) {
+      background: #3d336d;
+    }
+  }
+}
