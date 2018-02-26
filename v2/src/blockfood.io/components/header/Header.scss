@@ -9,7 +9,7 @@
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     padding-top: 35px;
     padding-bottom: 20px;
     transition: padding 0.5s;
@@ -34,7 +34,8 @@
     }
 
     #bfio-header-nav {
-      flex: 0 0 50%;
+      flex-grow: 0;
+      flex-shrink: 0;
       z-index: 2;
 
       a {
@@ -60,7 +61,8 @@
     }
 
     #bfio-header-links {
-      flex: 0 0 50%;
+      flex-grow: 0;
+      flex-shrink: 0;
       display: flex;
       align-items: center;
       justify-content: flex-end;

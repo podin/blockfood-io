@@ -28,7 +28,7 @@ export default class Header extends React.Component {
                 <div id="bfio-header-content">
                     <div id="bfio-header-logo">
                         {LinkWrapper.fromData(DATA_LINK_HOME, (
-                            <svg width="300" height="150">
+                            <svg width="150" height="150">
                                 <use xlinkHref={cleanUrl(icon_Bf + '#logo')}/>
                             </svg>
                         ))}
