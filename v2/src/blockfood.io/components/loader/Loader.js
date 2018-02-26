@@ -30,7 +30,8 @@ export default class Loader extends React.Component {
         const {visible, loading} = this.state
 
         return (
-            <div id="bfio-loader" className={`${!loading ? 'fade-out' : ''}`} style={{display: !visible ? 'none' : ''}}
+            <div id="bfio-loader"
+                 className={`${!loading ? 'fade-out' : ''}`} style={{display: !visible ? 'none' : ''}}
                  onTransitionEnd={this.onLoaderTransitionEnd}>
                 <svg>
                     <use xlinkHref={cleanUrl(icon_Bf + '#logo_small')}/>

@@ -14,19 +14,19 @@ import './Footer.scss'
 export default () => (
     <div id="bfio-footer">
         <div id="bfio-footer-top">
-            <div id="bfio-footer-copyright-col-1">
+            <div>
                 <h6>BlockFood</h6>
                 {LinkWrapper.fromData(DATA_LINKS_HEADER_NAV)}
             </div>
-            <div id="bfio-footer-copyright-col-2">
+            <div>
                 <h6>Open Sharing Economy foundation</h6>
                 {LinkWrapper.fromData(DATA_LINK_OSE_WEBSITE)}
             </div>
-            <div id="bfio-footer-copyright-col-3">
+            <div>
                 <h6>Contact Us</h6>
                 {LinkWrapper.fromData(DATA_LINK_CONTACT)}
             </div>
-            <div id="bfio-footer-copyright-col-4">
+            <div>
                 <h6>Legal</h6>
                 {LinkWrapper.fromData(DATA_LINKS_LEGAL)}
             </div>

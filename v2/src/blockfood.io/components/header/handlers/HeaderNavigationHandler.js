@@ -18,7 +18,7 @@ export default class HeaderNavigationHandler {
         this.linkHrefs = []
         this.linkElements = {}
         this.anchorElements = {}
-        this.linkTopElement = document.querySelector('#bfio-logo a')
+        this.linkTopElement = document.querySelector('#bfio-header-logo a')
 
         _.map(document.querySelectorAll('#bfio-header-nav a'), linkElement => {
             if (linkElement.href.indexOf('#') !== -1) {

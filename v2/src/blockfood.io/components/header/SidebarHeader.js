@@ -1,4 +1,3 @@
-import * as _ from 'lodash'
 import React from 'react'
 
 import {DATA_LINKS_SIDEBAR_HEADER} from '../../data/DataLinks'
@@ -18,7 +17,7 @@ export default class SidebarHeader extends React.Component {
     }
 
     setNavBarVisible(visible) {
-        _.forEach(this.rootElements, element => element.className = visible ? 'offsetX' : '')
+        this.rootElement.className = visible ? 'header-sidebar-opened' : ''
         this.setState({visible})
     }
 
@@ -33,8 +32,8 @@ export default class SidebarHeader extends React.Component {
     }
 
     componentDidMount() {
-        this.btnElement = document.querySelector('#bfio-sidebar-header-toggle')
-        this.rootElements = document.querySelectorAll('#bfio-wrapper > *')
+        this.btnElement = document.querySelector('#bfio-header-sidebar-btn')
+        this.rootElement = document.querySelector('#root')
 
         window.addEventListener('scroll', this.closeIfVisible.bind(this), false)
         window.addEventListener('click', this.closeIfVisible.bind(this), false)
@@ -45,10 +44,10 @@ export default class SidebarHeader extends React.Component {
 
         return (
             <React.Fragment>
-                <div id="bfio-sidebar-header-toggle" className={visible ? 'active' : ''}
-                     onClick={this.toggleNavBar}><i/>
+                <div id="bfio-header-sidebar-btn" className={visible ? 'active' : ''} onClick={this.toggleNavBar}>
+                    <i/>
                 </div>
-                <div id="bfio-sidebar-header">
+                <div id="bfio-header-sidebar-nav">
                     <nav>
                         {LinkWrapper.fromData(DATA_LINKS_SIDEBAR_HEADER)}
                     </nav>

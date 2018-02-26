@@ -12,13 +12,11 @@ import './App.scss'
 const App = () => (
     <Router scrollToHashDuration={0} scrollToHashOffset={-150}>
         <React.Fragment>
-            <div id="bfio-wrapper">
-                <div id="bfio-wrapper-background"></div>
-                <Header/>
-                <div id="bfio-content">
-                    <Routes/>
-                    <Footer/>
-                </div>
+            <div id="bfio-background"></div>
+            <Header/>
+            <div id="bfio-content">
+                <Routes/>
+                <Footer/>
             </div>
             <SidebarHeader/>
             <Loader/>

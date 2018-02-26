@@ -14,18 +14,19 @@ import './Header.scss'
 import icon_Bf from '../../style/images/icon_Bf.svg'
 
 export default class Header extends React.Component {
+    setBodyIsScrolledClassName() {
+        document.body.className = getScrollValue() > 0 ? 'page-scrolled' : ''
+    }
+
     componentDidMount() {
-        window.addEventListener('scroll', () => {
-            const isScrolled = getScrollValue() > 0
-            document.body.className = isScrolled ? 'scrolled' : ''
-        }, false)
+        window.addEventListener('scroll', this.setBodyIsScrolledClassName.bind(this), false)
     }
 
     render() {
         return (
             <header id="bfio-header">
-                <div className="header-content">
-                    <div id="bfio-logo">
+                <div id="bfio-header-content">
+                    <div id="bfio-header-logo">
                         {LinkWrapper.fromData(DATA_LINK_HOME, (
                             <svg width="300" height="150">
                                 <use xlinkHref={cleanUrl(icon_Bf + '#logo')}/>
@@ -35,7 +36,7 @@ export default class Header extends React.Component {
                     <nav id="bfio-header-nav">
                         {LinkWrapper.fromData(DATA_LINKS_HEADER_NAV)}
                     </nav>
-                    <div className="links">
+                    <div id="bfio-header-links">
                         {LinkWrapper.fromData(DATA_LINKS_HEADER_SOCIALS_SUBSCRIBE)}
                     </div>
                 </div>

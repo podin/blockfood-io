@@ -15,69 +15,68 @@ body {
 #root {
   height: 100%;
 
-  #bfio-wrapper {
-    height: 100%;
-
-    & > * {
-      transform: translateX(0);
-      transition: transform 0.5s;
-
-      &.offsetX {
-        transform: translateX(-$sidebarHeaderWidth);
-      }
-    }
-
-    #bfio-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: #fff;
-      z-index: 4;
-    }
-
-    #bfio-content {
-      position: relative;
-      z-index: 3;
-      padding-top: 150px;
-      background: white;
-      overflow: hidden;
-      min-height: calc(100% - 150px);
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      justify-content: space-between;
-      width: 95%;
-      max-width: 1200px;
-      margin: 0 auto;
-
-      #bfio-home > div {
-        min-height: 1000px; // TODO: remove (temporary fake page height)
-      }
-    }
-  }
-
-  #bfio-sidebar-header-toggle {
-    z-index: 5;
-  }
-
-  #bfio-wrapper-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 150%;
-    background: #fff;
-    z-index: 2;
-  }
-
-  #bfio-sidebar-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 150%;
-    background: black;
+  #bfio-header-sidebar-nav {
     z-index: 1;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: $sidebarHeaderWidth;
+    height: 200%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: black;
+  }
+
+  #bfio-background {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150%;
+    background: white;
+  }
+
+  #bfio-content {
+    z-index: 3;
+    position: relative;
+    width: 95%;
+    max-width: 1200px;
+    min-height: calc(100% - 150px);
+    margin: 0 auto;
+    padding-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    overflow: hidden;
+    background: white;
+  }
+
+  #bfio-header {
+    z-index: 4;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+  }
+
+  #bfio-header-sidebar-btn {
+    z-index: 5;
+    position: fixed;
+    top: 12px;
+    right: 20px;
+  }
+
+  #bfio-background, #bfio-header, #bfio-content {
+    transform: translateX(0);
+    transition: transform 0.5s;
+  }
+
+  &.header-sidebar-opened {
+    #bfio-background, #bfio-header, #bfio-content {
+      transform: translateX(-$sidebarHeaderWidth);
+    }
   }
 }

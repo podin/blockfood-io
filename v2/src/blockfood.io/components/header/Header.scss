@@ -3,7 +3,7 @@
 #bfio-header {
   border-bottom: 4px solid $mainColor;
 
-  .header-content {
+  #bfio-header-content {
     width: 95%;
     max-width: $maxWidth;
     margin: 0 auto;
@@ -14,7 +14,26 @@
     padding-bottom: 20px;
     transition: padding 0.5s;
 
-    nav {
+    #bfio-header-logo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      overflow: visible;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      z-index: 1;
+
+      a {
+        transform-origin: top center;
+        transition: transform 0.5s;
+        user-select: none;
+      }
+    }
+
+    #bfio-header-nav {
       flex: 0 0 50%;
       z-index: 2;
 
@@ -40,26 +59,7 @@
       }
     }
 
-    #bfio-logo {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 0;
-      overflow: visible;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      z-index: 1;
-
-      a {
-        transform-origin: top center;
-        transition: transform 0.5s;
-        user-select: none;
-      }
-    }
-
-    .links {
+    #bfio-header-links {
       flex: 0 0 50%;
       display: flex;
       align-items: center;
@@ -106,15 +106,15 @@
   }
 
   @media screen and (max-width: 1200px) {
-    .header-content {
+    #bfio-header-content {
       padding-top: 30px;
       padding-bottom: 15px;
 
-      #bfio-logo a {
+      #bfio-header-logo a {
         transform: scale(0.8);
       }
 
-      nav {
+      #bfio-header-nav {
         font-size: 0.9em;
 
         a {
@@ -122,7 +122,7 @@
         }
       }
 
-      .links {
+      #bfio-header-links {
         a {
           margin-left: 15px;
         }
@@ -135,15 +135,15 @@
   }
 
   @media screen and (max-width: 992px) {
-    .header-content {
+    #bfio-header-content {
       padding-top: 25px;
       padding-bottom: 10px;
 
-      #bfio-logo a {
+      #bfio-header-logo a {
         transform: scale(0.7);
       }
 
-      nav {
+      #bfio-header-nav {
         font-size: 0.8em;
 
         a {
@@ -151,7 +151,7 @@
         }
       }
 
-      .links {
+      #bfio-header-links {
         font-size: 0.9em;
 
         a {
@@ -166,30 +166,30 @@
   }
 
   @media screen and (max-width: 768px) {
-    .header-content {
+    #bfio-header-content {
       justify-content: flex-end;
       min-height: 40px;
       transition: none;
       padding-top: 8px;
       padding-bottom: 8px;
 
-      nav, .links {
+      #bfio-header-nav, #bfio-header-links {
         display: none;
       }
 
-      #bfio-logo a {
+      #bfio-header-logo a {
         transform: scale(0.6);
       }
     }
   }
 }
 
-.scrolled #bfio-header {
-  .header-content {
+.page-scrolled #bfio-header {
+  #bfio-header-content {
     padding-top: 8px;
     padding-bottom: 8px;
 
-    #bfio-logo a {
+    #bfio-header-logo a {
       transform: scale(0.6);
     }
   }
