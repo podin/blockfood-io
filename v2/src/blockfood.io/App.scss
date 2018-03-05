@@ -1,5 +1,6 @@
 @import '../../node_modules/reset-css/reset';
 @import './style/Variables';
+@import './style/Mixins';
 
 html, body {
   height: 100%;
@@ -46,10 +47,8 @@ body {
   #bfio-content {
     z-index: 3;
     position: relative;
-    width: 95%;
-    max-width: 1200px;
+    width: 100%;
     min-height: calc(100% - 150px);
-    margin: 0 auto;
     padding-top: 150px;
     display: flex;
     flex-direction: column;
@@ -57,6 +56,10 @@ body {
     justify-content: space-between;
     overflow: hidden;
     background: white;
+
+    #bfio-content-width {
+      @include contentWidth();
+    }
   }
 
   #bfio-header {

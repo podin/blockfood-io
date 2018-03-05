@@ -15,7 +15,9 @@ const App = () => (
             <div id="bfio-background"></div>
             <Header/>
             <div id="bfio-content">
-                <Routes/>
+                <div id="bfio-content-width">
+                    <Routes/>
+                </div>
                 <Footer/>
             </div>
             <SidebarHeader/>

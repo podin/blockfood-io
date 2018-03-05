@@ -1,4 +1,5 @@
 @import '../../style/Variables';
+@import '../../style/Mixins';
 
 #bfio-footer {
   display: flex;
@@ -7,6 +8,10 @@
   justify-content: flex-start;
   color: #85919d;
   margin-bottom: 30px;
+
+  #bfio-footer-width {
+    @include contentWidth();
+  }
 
   #bfio-footer-top {
     display: flex;
@@ -23,7 +28,7 @@
       align-items: flex-start;
       justify-content: flex-start;
       align-self: stretch;
-      background: #eaeaea;
+      background: rgba(234, 234, 234, 0.8);
       border-radius: 10px;
       padding: 15px;
       margin-top: 35px;
@@ -119,8 +124,28 @@
       }
 
       #bfio-footer-copyright-right {
+        position: relative;
         font-style: italic;
         text-align: right;
+        font-weight: bold;
+
+        .cloud {
+          bottom: 0;
+          right: 0;
+          transform: scale(4) translate(-25px, 15px);
+
+          @media screen and (max-width: 1200px) {
+            transform: scale(5, 4) translate(-25px, 40px);
+          }
+
+          @media screen and (max-width: 768px) {
+            transform: scale(5, 4) translate(-25px, 38px);
+          }
+
+          @media screen and (max-width: 375px) {
+            transform: scale(5, 4) translate(-25px, 34px);
+          }
+        }
       }
     }
   }
