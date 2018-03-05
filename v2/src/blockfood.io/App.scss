@@ -10,6 +10,12 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   background: white;
+
+  &.no-transition {
+    &, * {
+      transition: none !important;
+    }
+  }
 }
 
 #root {

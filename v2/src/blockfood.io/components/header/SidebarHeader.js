@@ -26,8 +26,16 @@ export default class SidebarHeader extends React.Component {
     }
 
     closeIfVisible(event) {
-        if (event.target !== this.btnElement && !this.btnElement.contains(event.target) && this.state.visible) {
+        if (this.state.visible && event.target !== this.btnElement && !this.btnElement.contains(event.target)) {
             this.setNavBarVisible(false)
+        }
+    }
+
+    closeImmediatelyIfVisible() {
+        if (this.state.visible) {
+            document.body.classList.add('no-transition')
+            this.setNavBarVisible(false)
+            setTimeout(() => document.body.classList.remove('no-transition'), 0)
         }
     }
 
@@ -35,6 +43,7 @@ export default class SidebarHeader extends React.Component {
         this.btnElement = document.querySelector('#bfio-header-sidebar-btn')
         this.rootElement = document.querySelector('#root')
 
+        window.addEventListener('resize', this.closeImmediatelyIfVisible.bind(this), false)
         window.addEventListener('scroll', this.closeIfVisible.bind(this), false)
         window.addEventListener('click', this.closeIfVisible.bind(this), false)
     }
