@@ -25,19 +25,21 @@ export default class Header extends React.Component {
     render() {
         return (
             <header id="bfio-header">
-                <div id="bfio-header-content">
-                    <div id="bfio-header-logo">
-                        {LinkWrapper.fromData(DATA_LINK_HOME, (
-                            <svg width="150" height="150">
-                                <use xlinkHref={cleanUrl(icon_Bf + '#logo')}/>
-                            </svg>
-                        ))}
-                    </div>
-                    <nav id="bfio-header-nav">
-                        {LinkWrapper.fromData(DATA_LINKS_HEADER_NAV)}
-                    </nav>
-                    <div id="bfio-header-links">
-                        {LinkWrapper.fromData(DATA_LINKS_HEADER_SOCIALS_SUBSCRIBE)}
+                <div id="bfio-header-wrapper">
+                    <div id="bfio-header-content">
+                        <div id="bfio-header-logo">
+                            {LinkWrapper.fromData(DATA_LINK_HOME, (
+                                <svg width="150" height="150">
+                                    <use xlinkHref={cleanUrl(icon_Bf + '#logo')}/>
+                                </svg>
+                            ))}
+                        </div>
+                        <nav id="bfio-header-nav">
+                            {LinkWrapper.fromData(DATA_LINKS_HEADER_NAV)}
+                        </nav>
+                        <div id="bfio-header-links">
+                            {LinkWrapper.fromData(DATA_LINKS_HEADER_SOCIALS_SUBSCRIBE)}
+                        </div>
                     </div>
                 </div>
             </header>
