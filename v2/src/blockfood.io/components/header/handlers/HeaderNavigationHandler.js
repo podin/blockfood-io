@@ -1,5 +1,5 @@
 import * as _ from 'lodash'
-import {scrollTo} from 'react-static'
+import {scrollTo} from '../../../utils/Utils'
 
 export default class HeaderNavigationHandler {
     constructor() {
