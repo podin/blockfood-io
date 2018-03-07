@@ -1,4 +1,5 @@
 @import '../../style/Variables';
+@import '../../style/Mixins';
 
 @mixin headerTransform($headerTranslateY, $headerContentTranslateY, $logoScale) {
   transform: translateY($headerTranslateY);
@@ -21,11 +22,10 @@
     border-bottom: 4px solid $mainColor;
     padding: 30px 0 20px 0;
     transition: transform 0.5s;
+    background: #fff;
 
     #bfio-header-content {
-      width: 95%;
-      max-width: $maxWidth;
-      margin: 0 auto;
+      @include contentWidth();
       display: flex;
       align-items: center;
       justify-content: space-between;

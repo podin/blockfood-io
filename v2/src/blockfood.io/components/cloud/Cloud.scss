@@ -7,4 +7,40 @@
   svg {
     stroke: #f5e7b8;
   }
+
+  &.animated-1 svg {
+    animation: scale-up-down-1 10s ease-in-out infinite;
+
+    @keyframes scale-up-down-1 {
+      0% {
+        transform: scale(1) translateX(2px);
+      }
+
+      50% {
+        transform: scale(1.2) translateX(-2px);
+      }
+
+      100% {
+        transform: scale(1) translateX(2px);
+      }
+    }
+  }
+
+  &.animated-2 svg {
+    animation: scale-up-down-2 5s ease-in-out infinite;
+
+    @keyframes scale-up-down-2 {
+      0% {
+        transform: scale(1) translateY(2px);
+      }
+
+      50% {
+        transform: scale(1.05, 1) translateY(-2px);
+      }
+
+      100% {
+        transform: scale(1) translateY(2px);
+      }
+    }
+  }
 }
