@@ -1,0 +1,13 @@
+.animation {
+  position: relative;
+  display: inline-block;
+
+  img {
+    display: none;
+  }
+
+  canvas {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}

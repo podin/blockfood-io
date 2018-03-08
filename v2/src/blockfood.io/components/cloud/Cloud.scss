@@ -4,6 +4,14 @@
   width: 150px;
   height: 150px;
 
+  .cloud-parallax, svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
   svg {
     stroke: #f5e7b8;
   }
@@ -27,19 +35,37 @@
   }
 
   &.animated-2 svg {
-    animation: scale-up-down-2 5s ease-in-out infinite;
+    animation: scale-up-down-2 4s ease-in-out infinite;
 
     @keyframes scale-up-down-2 {
       0% {
-        transform: scale(1) translateY(2px);
+        transform: scale(1) translateY(0px);
       }
 
       50% {
-        transform: scale(1.05, 1) translateY(-2px);
+        transform: scale(1.025, 1) translateY(1px);
       }
 
       100% {
-        transform: scale(1) translateY(2px);
+        transform: scale(1) translateY(0px);
+      }
+    }
+  }
+
+  &.animated-3 svg {
+    animation: scale-up-down-3 4s ease-in-out infinite;
+
+    @keyframes scale-up-down-3 {
+      0% {
+        transform: scale(1) translateY(1px);
+      }
+
+      50% {
+        transform: scale(1.05, 0.95) translateY(-3px);
+      }
+
+      100% {
+        transform: scale(1) translateY(1px);
       }
     }
   }

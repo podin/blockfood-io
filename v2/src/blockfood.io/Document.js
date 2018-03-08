@@ -8,6 +8,7 @@ export default ({ Html, Head, Body, children }) => (
         <title>BlockFood - Decentralized Food Ordering & Delivery Platform</title>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Poppins" rel="stylesheet"/>
         <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet"/>
+        <script src='https://code.createjs.com/createjs-2015.11.26.min.js'/>
     </Head>
     <Body>{children}</Body>
     </Html>

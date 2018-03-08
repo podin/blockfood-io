@@ -34,7 +34,7 @@ export default class Cloud extends React.Component {
         return (
             <div className={`cloud${animated ? ` animated-${animated}` : ''}`}>
                 <div className='cloud-parallax'>
-                    <svg width="150" height="150">
+                    <svg>
                         <use xlinkHref={cleanUrl(icon_Bf + `#cloud_${index < 10 ? `0${index}` : index}`)}/>
                     </svg>
                 </div>
