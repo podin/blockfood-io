@@ -1,5 +1,5 @@
 #bfio-home {
-  h1, h2 {
+  h1, h2, h3 {
     font-family: Poppins,sans-serif;
     color: #e6501e;
   }
@@ -14,25 +14,47 @@
     font-weight: 400;
   }
 
-  @media screen and (max-width: 480px) {
+  h3 {
+    font-size: 3em;
+    font-weight: 400;
+
+  }
+
+  p {
+    font-family: "Open Sans", sans-serif;
+    color: rgb(133, 145, 157);
+  }
+
+  @media screen and (max-width: 768px) {
     h1 {
-      font-size: 3.7em;
+      font-size: 3.5em;
       font-weight: bold;
     }
 
     h2 {
-      font-size: 1.7em;
+      font-size: 2em;
+      font-weight: 400;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    h1 {
+      font-size: 3em;
+      font-weight: bold;
+    }
+
+    h2 {
+      font-size: 1.5em;
       font-weight: 400;
     }
   }
 
   section {
     position: relative;
+    margin: 50px 0 150px 0;
   }
 
   #bfio-intro {
-    margin: 50px 0;
-
     h1, h2 {
       text-align: right;
       margin-bottom: 40px;
@@ -69,6 +91,30 @@
       width: 100%;
       height: 100%;
       transform: scale(1.5) translate(-15px, -15px);
+    }
+  }
+
+  #bfio-tutorial {
+    text-align: center;
+
+    p {
+      margin: 50px auto;
+      max-width: 700px;
+      font-size: 1.2em;
+      line-height: 1.5em;
+    }
+
+    .animation {
+      canvas {
+        margin-top: -5%;
+        margin-bottom: 5%;
+      }
+
+      .cloud {
+        width: 100%;
+        height: 100%;
+        transform: scale(1.5,1.2);
+      }
     }
   }
 }
