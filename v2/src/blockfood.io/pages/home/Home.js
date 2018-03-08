@@ -34,6 +34,7 @@ export default class Home extends React.Component {
                         <Cloud index="4" animated="3"/>
                     </Animation>
                 </section>
+                <div id="about"></div>
                 <section id="bfio-tutorial">
                     <h3>How does it work?</h3>
                     <p>The platform uses smart contracts to handle the payment and the progression of the orders placed by customers.</p>
@@ -43,6 +44,8 @@ export default class Home extends React.Component {
                         <Cloud index="6" animated="2"/>
                     </Animation>
                 </section>
+                <div id="roadmap"></div>
+                <div id="team"></div>
             </div>
         )
     }
