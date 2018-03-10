@@ -4,6 +4,9 @@ import HeaderNavigationHandler from '../../components/header/handlers/HeaderNavi
 
 import Cloud from '../../components/cloud/Cloud'
 import Animation from '../../components/animation/Animation'
+import LinkWrapper from '../../components/linkWrapper/LinkWrapper'
+
+import {DATA_LINK_TELEGRAM, DATA_LINK_TWITTER} from '../../data/DataLinks'
 
 import Subscription from './subscription/Subscription'
 
@@ -43,7 +46,7 @@ export default class Home extends React.Component {
             <div id="bfio-home">
 
                 <section id="bfio-intro">
-                    <Cloud index="2" animated="1" depth="0.28"/>
+                    <Cloud index="2" animated="1" depth="0.2"/>
                     <Cloud index="7" animated="2" depth="0.01"/>
                     <h1>BlockFood</h1>
                     <h2>Food Delivery. Reinvented.</h2>
@@ -54,8 +57,13 @@ export default class Home extends React.Component {
 
                 <section id="bfio-subscribe">
                     <div id="subscribe"></div>
+                    <Cloud index="1" depth="0.3"/>
                     <h3>Join our whitelist</h3>
                     <Subscription/>
+                    <div className="social">
+                        {LinkWrapper.fromData(DATA_LINK_TELEGRAM, null, {before: 'Join our Telegram group'})}
+                        {LinkWrapper.fromData(DATA_LINK_TWITTER, null, {before: 'Follow us on Twitter'})}
+                    </div>
                 </section>
 
                 <section id="bfio-tutorial">

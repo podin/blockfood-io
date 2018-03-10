@@ -2,8 +2,8 @@
 
 #bfio-home {
   h1, h2, h3, h4, h5, h6 {
-    font-family: Poppins,sans-serif;
-    color: #e6501e;
+    font-family: Poppins, sans-serif;
+    color: $secondaryTextColor;
   }
 
   h1 {
@@ -116,16 +116,46 @@
       .cloud {
         width: 100%;
         height: 100%;
-        transform: scale(1.5,1.2);
+        transform: scale(1.5, 1.2);
       }
     }
   }
 
   #bfio-subscribe {
-    margin-bottom: 75px;
-
     h3 {
       color: $mainColor;
+    }
+
+    .cloud {
+      right: -300px;
+      top: -100px;
+    }
+
+    .social {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      a {
+        margin: 20px 25px 0;
+        padding: 15px 20px;
+        text-decoration: none;
+        color: $secondaryTextColor;
+        font-size: 1.3em;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        transition: background-color 0.3s;
+        white-space: nowrap;
+
+        i {
+          margin-left: 10px;
+        }
+
+        &:hover {
+          background-color: #e6e6e6;
+        }
+      }
     }
   }
 }
