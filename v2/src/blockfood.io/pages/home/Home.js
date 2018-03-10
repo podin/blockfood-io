@@ -28,6 +28,29 @@ const Animation02_Placeholders = [
 ]
 
 export default class Home extends React.Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            subscribeInputValue: ''
+        }
+
+        this.onSubscribeValueChange = this.onSubscribeValueChange.bind(this)
+        this.onSubscribeSubmit = this.onSubscribeSubmit.bind(this)
+    }
+
+    onSubscribeValueChange(event) {
+        this.setState({subscribeInputValue: event.target.value})
+    }
+
+    onSubscribeSubmit(event) {
+        event.preventDefault()
+
+        const {subscribeInputValue} = this.state
+
+        console.log(subscribeInputValue)
+    }
+
     componentDidMount() {
         this.headerNavigationHandler = new HeaderNavigationHandler()
     }
@@ -37,8 +60,11 @@ export default class Home extends React.Component {
     }
 
     render() {
+        const {subscribeInputValue} = this.state
+
         return (
             <div id="bfio-home">
+
                 <section id="bfio-intro">
                     <Cloud index="2" animated="1" depth="0.28"/>
                     <Cloud index="7" animated="2" depth="0.01"/>
@@ -48,16 +74,35 @@ export default class Home extends React.Component {
                         <Cloud index="4" animated="3"/>
                     </Animation>
                 </section>
-                <div id="about"></div>
+
+                <section id="bfio-subscribe">
+                    <div id="subscribe"></div>
+                    <h3>Join our whitelist</h3>
+                    <div>
+                        <form onSubmit={this.onSubscribeSubmit}>
+                            <div className="input">
+                                <label htmlFor="bfio-input-subscribe"><i className="fas fa-at"/></label>
+                                <input id="bfio-input-subscribe" value={subscribeInputValue} onChange={this.onSubscribeValueChange}/>
+                            </div>
+                            <button type="submit" className={subscribeInputValue.length > 0 ? 'active' : ''}>Subscribe</button>
+                        </form>
+
+
+                    </div>
+                </section>
+
                 <section id="bfio-tutorial">
+                    <div id="about"></div>
                     <h3>How does it work?</h3>
                     <p>The platform uses smart contracts to handle the payment and the progression of the orders placed by customers.</p>
                     <Animation animation={Animation02} placeholders={Animation02_Placeholders}>
                         <Cloud index="6" animated="2"/>
                     </Animation>
                 </section>
+
                 <div id="roadmap"></div>
                 <div id="team"></div>
+
             </div>
         )
     }
