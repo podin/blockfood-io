@@ -66,8 +66,21 @@ export default class Home extends React.Component {
                     </div>
                 </section>
 
-                <section id="bfio-tutorial">
+                <section id="bfio-project">
                     <div id="about"></div>
+                    <h3>What is BlockFood?</h3>
+                    <h4>BlockFood is the world's first <b>decentralized food ordering & delivery platform</b>.</h4>
+                    <p>
+                        BlockFood is an open platform created to connect customers to restaurants with a fair
+                        distribution model of revenue, based on smart contracts.
+                        BlockFood is the first project from the <b>Open Sharing Economy foundation</b>.
+                    </p>
+                    <div className="video">
+                        <iframe src="https://www.youtube.com/embed/irqmb2AnBfY" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen=""></iframe>
+                    </div>
+                </section>
+
+                <section id="bfio-tutorial">
                     <h3>How does it work?</h3>
                     <p>The platform uses smart contracts to handle the payment and the progression of the orders placed by customers.</p>
                     <Animation animation={Animation02} placeholders={Animation02_Placeholders}>
