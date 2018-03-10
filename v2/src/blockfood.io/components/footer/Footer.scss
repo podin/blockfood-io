@@ -18,7 +18,7 @@
     align-items: flex-start;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
     font-size: 1.1em;
 
     & > * {
@@ -88,6 +88,7 @@
   }
 
   #bfio-footer-bottom {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -130,22 +131,28 @@
         font-weight: bold;
 
         .cloud {
-          bottom: 0;
-          right: 0;
-          transform: scale(4) translate(-25px, 15px);
+          bottom: -160px;
+          right: 115px;
+          transform: scale(5, 4);
 
           @media screen and (max-width: 1200px) {
-            transform: scale(5, 4) translate(-25px, 40px);
-          }
-
-          @media screen and (max-width: 768px) {
-            transform: scale(5, 4) translate(-25px, 38px);
-          }
-
-          @media screen and (max-width: 375px) {
-            transform: scale(5, 4) translate(-25px, 34px);
+            display: none;
           }
         }
+      }
+    }
+
+    @media screen and (max-width: 1200px) {
+      &:before {
+        content: '';
+        position: absolute;
+        top: -20px;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        z-index: -1;
+        background: $cloudColor;
+        border-radius: 100%;
       }
     }
   }

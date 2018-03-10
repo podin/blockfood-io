@@ -1,3 +1,5 @@
+@import '../../style/Variables';
+
 .cloud {
   z-index: -1;
   position: absolute;
@@ -13,7 +15,7 @@
   }
 
   svg {
-    stroke: #f5e7b8;
+    stroke: $cloudColor;
   }
 
   &.animated-1 svg {

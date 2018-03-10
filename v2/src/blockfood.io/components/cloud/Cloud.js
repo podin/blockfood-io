@@ -29,10 +29,12 @@ export default class Cloud extends React.Component {
     }
 
     render() {
-        const {index, animated} = this.props
+        const {className, index, animated} = this.props
+
+        const cloudClassName = _.compact(['cloud', className, animated && `animated-${animated}`]).join(' ')
 
         return (
-            <div className={`cloud${animated ? ` animated-${animated}` : ''}`}>
+            <div className={cloudClassName}>
                 <div className='cloud-parallax'>
                     <svg>
                         <use xlinkHref={cleanUrl(icon_Bf + `#cloud_${index < 10 ? `0${index}` : index}`)}/>
