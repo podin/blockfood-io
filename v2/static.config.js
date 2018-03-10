@@ -1,12 +1,13 @@
 import glob from 'glob-promise'
 import path from 'path'
 
+import DEPLOY_CONFIG from './static.deploy-config'
 import webpack from './scripts/webpack/webpack.config'
 
 import Document from './src/blockfood.io/Document'
 
 export default {
-    siteRoot: 'https://blockfood.io/',
+    siteRoot: DEPLOY_CONFIG.remoteRoot,
     paths: {
         public: 'src/public'
     },
