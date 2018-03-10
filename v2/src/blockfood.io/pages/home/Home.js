@@ -5,6 +5,8 @@ import HeaderNavigationHandler from '../../components/header/handlers/HeaderNavi
 import Cloud from '../../components/cloud/Cloud'
 import Animation from '../../components/animation/Animation'
 
+import Subscription from './subscription/Subscription'
+
 import './Home.scss'
 
 import Animation01 from '../../style/animations/animation_01'
@@ -28,29 +30,6 @@ const Animation02_Placeholders = [
 ]
 
 export default class Home extends React.Component {
-    constructor(props) {
-        super(props)
-
-        this.state = {
-            subscribeInputValue: ''
-        }
-
-        this.onSubscribeValueChange = this.onSubscribeValueChange.bind(this)
-        this.onSubscribeSubmit = this.onSubscribeSubmit.bind(this)
-    }
-
-    onSubscribeValueChange(event) {
-        this.setState({subscribeInputValue: event.target.value})
-    }
-
-    onSubscribeSubmit(event) {
-        event.preventDefault()
-
-        const {subscribeInputValue} = this.state
-
-        console.log(subscribeInputValue)
-    }
-
     componentDidMount() {
         this.headerNavigationHandler = new HeaderNavigationHandler()
     }
@@ -60,8 +39,6 @@ export default class Home extends React.Component {
     }
 
     render() {
-        const {subscribeInputValue} = this.state
-
         return (
             <div id="bfio-home">
 
@@ -78,17 +55,7 @@ export default class Home extends React.Component {
                 <section id="bfio-subscribe">
                     <div id="subscribe"></div>
                     <h3>Join our whitelist</h3>
-                    <div>
-                        <form onSubmit={this.onSubscribeSubmit}>
-                            <div className="input">
-                                <label htmlFor="bfio-input-subscribe"><i className="fas fa-at"/></label>
-                                <input id="bfio-input-subscribe" value={subscribeInputValue} onChange={this.onSubscribeValueChange}/>
-                            </div>
-                            <button type="submit" className={subscribeInputValue.length > 0 ? 'active' : ''}>Subscribe</button>
-                        </form>
-
-
-                    </div>
+                    <Subscription/>
                 </section>
 
                 <section id="bfio-tutorial">

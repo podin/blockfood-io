@@ -1,7 +1,7 @@
 @import '../../style/Variables';
 
 #bfio-home {
-  h1, h2, h3 {
+  h1, h2, h3, h4, h5, h6 {
     font-family: Poppins,sans-serif;
     color: #e6501e;
   }
@@ -122,106 +122,10 @@
   }
 
   #bfio-subscribe {
+    margin-bottom: 75px;
+
     h3 {
       color: $mainColor;
-    }
-
-    form {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 30px;
-
-      .input {
-        flex-grow: 1;
-        flex-shrink: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        max-width: 100%;
-      }
-
-      & > *, & > .input > * {
-        height: 40px;
-        line-height: 40px;
-      }
-
-      label, button {
-        background-color: $mainColor;
-        color: white;
-      }
-
-      label, button.active {
-        cursor: pointer;
-
-        &:hover {
-          background-color: darken($mainColor, 5%);
-        }
-      }
-
-      label {
-        flex-grow: 0;
-        flex-shrink: 0;
-        width: 50px;
-        background-color: $mainColor;
-        color: white;
-        font-size: 1.2em;
-        border-radius: 5px 0 0 5px;
-        text-align: center;
-      }
-
-      input {
-        flex-grow: 0;
-        flex-shrink: 0;
-        width: calc(100% - 50px);
-        padding: 0 15px;
-        font-size: 1.3em;
-        border: 1px solid rgba($mainColor, 0.3);
-        border-left: none;
-        border-right: none;
-        outline: none;
-        transition: border-color 0.3s;
-        box-sizing: border-box;
-
-        &:focus {
-          border-color: $mainColor;
-        }
-      }
-
-      button {
-        flex-grow: 0;
-        flex-shrink: 0;
-        padding: 0 15px;
-        font-family: "Open Sans", sans-serif;
-        font-size: 1.2em;
-        border: none;
-        outline: none;
-        border-radius: 0 5px 5px 0;
-        transition: color 0.3s;
-
-        &:not(.active) {
-          color: rgba(white, 0.5);
-        }
-      }
-
-      @media screen and (max-width: 480px) {
-        flex-direction: column;
-
-        .input, button {
-          align-self: stretch;
-        }
-
-        input {
-          border: 1px solid rgba($mainColor, 0.3);
-          border-left: none;
-          border-radius: 0 5px 5px 0;
-        }
-
-        button {
-          margin-top: 10px;
-          border-radius: 5px;
-        }
-      }
     }
   }
 }

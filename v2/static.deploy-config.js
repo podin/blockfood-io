@@ -1,3 +1,6 @@
+const remoteRoot = 'https://blockfood.io/'
+
 module.exports = {
-    remoteRoot: 'https://blockfood.io/'
+    remoteRoot,
+    subscriptionEndPoint: remoteRoot + 'user/new?email='
 }
