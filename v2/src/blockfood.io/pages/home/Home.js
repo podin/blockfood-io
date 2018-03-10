@@ -46,10 +46,12 @@ export default class Home extends React.Component {
             <div id="bfio-home">
 
                 <section id="bfio-intro">
-                    <Cloud index="2" animated="1" depth="0.2"/>
-                    <Cloud index="7" animated="2" depth="0.01"/>
-                    <h1>BlockFood</h1>
-                    <h2>Food Delivery. Reinvented.</h2>
+                    <Cloud index="2" animated="1" depth="0.9"/>
+                    <div id="bfio-title">
+                        <Cloud index="9" animated="2"/>
+                        <h1>BlockFood</h1>
+                        <h2>Food Delivery. Reinvented.</h2>
+                    </div>
                     <Animation animation={Animation01} placeholders={Animation01_Placeholders}>
                         <Cloud index="4" animated="3"/>
                     </Animation>
@@ -57,7 +59,7 @@ export default class Home extends React.Component {
 
                 <section id="bfio-subscribe">
                     <div id="subscribe"></div>
-                    <Cloud index="1" depth="0.3"/>
+                    <Cloud index="1" depth="0.8"/>
                     <h3>Join our whitelist</h3>
                     <Subscription/>
                     <div className="social">
@@ -76,11 +78,13 @@ export default class Home extends React.Component {
                         BlockFood is the first project from the <b>Open Sharing Economy foundation</b>.
                     </p>
                     <div className="video">
+                        <Cloud index="5"/>
                         <iframe src="https://www.youtube.com/embed/irqmb2AnBfY" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen=""></iframe>
                     </div>
                 </section>
 
                 <section id="bfio-tutorial">
+                    <Cloud index="10" depth="0.2"/>
                     <h3>How does it work?</h3>
                     <p>The platform uses smart contracts to handle the payment and the progression of the orders placed by customers.</p>
                     <Animation animation={Animation02} placeholders={Animation02_Placeholders}>
