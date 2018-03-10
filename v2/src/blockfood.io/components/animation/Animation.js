@@ -1,3 +1,4 @@
+import * as _ from 'lodash'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {cleanUrl} from '../../utils/Utils'
@@ -27,12 +28,14 @@ export default class Animation extends React.Component {
     }
 
     render() {
-        const {placeholderSrc, placeholderAlt} = this.props
+        const {placeholders} = this.props
 
         return (
             <div className="animation">
                 {this.props.children}
-                <img src={cleanUrl(placeholderSrc)} alt={placeholderAlt}/>
+                {_.map(placeholders, ({src, alt}) => (
+                    <img key={src} src={cleanUrl(src)} alt={alt}/>
+                ))}
                 <canvas/>
             </div>
         )
