@@ -13,20 +13,41 @@ export default class Cloud extends React.Component {
         super(props)
 
         this.onScroll = this.onScroll.bind(this)
+        this.onResize = this.onResize.bind(this)
     }
 
     onScroll() {
-        this.parallaxElement.style.transform = `translateY(${this.props.depth * getScrollValue()}px)`
+        const scrollValue = getScrollValue()
+
+        if (scrollValue >= this.threshold) {
+            this.parallaxElement.style.transform = `translateY(${this.props.depth * (scrollValue - this.threshold)}px)`
+        }
+    }
+
+    onResize() {
+        const offsetTop = this.containerElement.getBoundingClientRect().top + getScrollValue()
+        this.threshold = Math.max(0, offsetTop - window.innerHeight)
+
+        this.onScroll()
     }
 
     componentDidMount() {
-        this.parallaxElement = ReactDOM.findDOMNode(this).querySelector('.cloud-parallax')
+        if (this.props.depth) {
+            this.containerElement = ReactDOM.findDOMNode(this)
+            this.parallaxElement = this.containerElement.querySelector('.cloud-parallax')
 
-        this.props.depth && window.addEventListener('scroll', this.onScroll, false)
+            window.addEventListener('scroll', this.onScroll, false)
+            window.addEventListener('resize', this.onResize, false)
+
+            this.onResize()
+        }
     }
 
     componentWillUnmount() {
-        this.props.depth && window.addEventListener('scroll', this.onScroll, false)
+        if (this.props.depth) {
+            window.addEventListener('scroll', this.onScroll, false)
+            window.addEventListener('resize', this.onResize, false)
+        }
     }
 
     render() {

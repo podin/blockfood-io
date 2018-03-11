@@ -52,7 +52,7 @@ export default class Roadmap extends React.Component {
 
     render() {
         return (
-            <div className="roadmap">
+            <div className="roadmap-timeline">
                 <div className="marker"></div>
                 {_.map(DATA_ROAD_MAP, year => (
                     <div key={year.date} className="item">

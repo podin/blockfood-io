@@ -73,7 +73,7 @@ export default class Home extends React.Component {
                 </section>
 
                 <section id="bfio-project">
-                    <div id="about"></div>
+                    <nav id="about"/>
                     <h3>What is BlockFood?</h3>
                     <h4>BlockFood is the world's first <b>decentralized food ordering & delivery platform</b>.</h4>
                     <p>
@@ -88,7 +88,7 @@ export default class Home extends React.Component {
                 </section>
 
                 <section id="bfio-characteristics">
-                    <Cloud index="9" depth="0.1"/>
+                    <Cloud index="9" depth="0.2"/>
                     <Cloud index="9"/>
                     <Cloud index="8"/>
                     <Cloud index="2"/>
@@ -128,7 +128,7 @@ export default class Home extends React.Component {
                 </section>
 
                 <section id="bfio-tutorial">
-                    <Cloud index="10" depth="0.2"/>
+                    <Cloud index="10" depth="0.4"/>
                     <h3>How does it work?</h3>
                     <h6>The platform uses smart contracts to handle the payment and the progression of the orders placed by customers.</h6>
                     <Animation animation={Animation02} placeholders={Animation02_Placeholders}>
@@ -140,7 +140,11 @@ export default class Home extends React.Component {
                 </section>
 
                 <section id="bfio-roadmap">
-                    <div id="roadmap"></div>
+                    <nav id="roadmap"/>
+                    <Cloud index="2" depth="0.5"/>
+                    <Cloud index="8" depth="0"/>
+                    <Cloud index="9" depth="0.2"/>
+                    <Cloud index="4" depth="0.6"/>
                     <h3>Development road map</h3>
                     <h6>Our development schedule for the next two years.</h6>
                     <Roadmap/>
