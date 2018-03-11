@@ -7,7 +7,7 @@ import Cloud from '../../components/cloud/Cloud'
 import Animation from '../../components/animation/Animation'
 import LinkWrapper from '../../components/linkWrapper/LinkWrapper'
 
-import {DATA_LINK_TELEGRAM, DATA_LINK_TWITTER} from '../../data/DataLinks'
+import {DATA_LINK_TELEGRAM, DATA_LINK_TWITTER, DATA_LINK_WHITEPAPER} from '../../data/DataLinks'
 
 import Subscription from './subscription/Subscription'
 
@@ -133,6 +133,9 @@ export default class Home extends React.Component {
                     <Animation animation={Animation02} placeholders={Animation02_Placeholders}>
                         <Cloud index="6" animated="2"/>
                     </Animation>
+                    <p>
+                        To get more details on BlockFood, browse our {LinkWrapper.fromData(DATA_LINK_WHITEPAPER)}
+                    </p>
                 </section>
 
                 <div id="roadmap"></div>
