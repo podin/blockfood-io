@@ -83,7 +83,7 @@ export default class Home extends React.Component {
                     </p>
                     <div className="video">
                         <Cloud index="5"/>
-                        <iframe src="https://www.youtube.com/embed/irqmb2AnBfY" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen=""></iframe>
+                        <iframe src="https://www.youtube.com/embed/irqmb2AnBfY" frameBorder="0" allow="encrypted-media" allowFullScreen=""></iframe>
                     </div>
                 </section>
 

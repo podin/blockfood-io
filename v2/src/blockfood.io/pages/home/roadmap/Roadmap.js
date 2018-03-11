@@ -10,10 +10,10 @@ export default class Roadmap extends React.Component {
     constructor(props) {
         super(props)
 
-        this.onScroll = this.onScroll.bind(this)
+        this.onScrollOrResize = this.onScrollOrResize.bind(this)
     }
 
-    onScroll() {
+    onScrollOrResize() {
         if (this.remainningInvisibleStepElements.length > 0) {
             let lastVisibleStepElementFound = null
 
@@ -42,12 +42,14 @@ export default class Roadmap extends React.Component {
         this.remainningInvisibleStepElements = this.containerElement.querySelectorAll('.step')
         this.markerElement = this.containerElement.querySelector('.marker')
 
-        window.addEventListener('scroll', this.onScroll, false)
-        this.onScroll()
+        window.addEventListener('scroll', this.onScrollOrResize, false)
+        window.addEventListener('resize', this.onScrollOrResize, false)
+        this.onScrollOrResize()
     }
 
     componentWillUnmount() {
-        window.addEventListener('scroll', this.onScroll, false)
+        window.addEventListener('scroll', this.onScrollOrResize, false)
+        window.addEventListener('resize', this.onScrollOrResize, false)
     }
 
     render() {

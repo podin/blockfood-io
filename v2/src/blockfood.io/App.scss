@@ -52,13 +52,15 @@ body {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding-top: 150px;
     overflow: hidden;
     background: white;
 
     #bfio-content-width {
       @include contentWidth();
+      flex-grow: 1;
+      flex-shrink: 0;
 
       & > * {
         position: relative;

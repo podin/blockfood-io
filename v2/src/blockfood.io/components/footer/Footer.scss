@@ -7,7 +7,8 @@
   align-items: stretch;
   justify-content: flex-start;
   color: #85919d;
-  margin-bottom: 30px;
+  padding-bottom: 30px;
+  overflow: hidden;
 
   #bfio-footer-width {
     @include contentWidth();
