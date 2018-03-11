@@ -38,8 +38,12 @@
   }
 
   h6 {
-    font-size: 1em;
+    margin: 20px auto 50px;
+    text-align: center;
     font-weight: 400;
+    max-width: 700px;
+    font-size: 1.2em;
+    color: #85919d;
   }
 
   p {
@@ -336,11 +340,11 @@
           fill: white;
         }
 
-        h6, p {
+        h5, p {
           color: white;
         }
 
-        h6 {
+        h5 {
           font-weight: bold;
           font-size: 1.2em;
           margin-bottom: 10px;
@@ -391,24 +395,19 @@
       transform: scale(1.5);
     }
 
-    p:first-of-type {
-      max-width: 700px;
-      margin: 20px auto 50px;
-      font-size: 1.2em;
-    }
-
-    p:last-of-type {
+    p {
       margin: 60px auto 0;
       color: #484c50;
       font-family: Poppins, sans-serif;
       font-size: 1.5em;
 
       a {
+        display: inline-block;
         text-decoration: none;
         background-color: $mainColor;
         color: white;
         border-radius: 5px;
-        margin-left: 5px;
+        margin: 5px 0 0 5px;
         padding: 10px 20px;
         cursor: pointer;
 

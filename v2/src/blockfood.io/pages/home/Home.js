@@ -10,6 +10,7 @@ import LinkWrapper from '../../components/linkWrapper/LinkWrapper'
 import {DATA_LINK_TELEGRAM, DATA_LINK_TWITTER, DATA_LINK_WHITEPAPER} from '../../data/DataLinks'
 
 import Subscription from './subscription/Subscription'
+import Roadmap from './roadmap/Roadmap'
 
 import './Home.scss'
 
@@ -99,7 +100,7 @@ export default class Home extends React.Component {
                                 <svg width="150" height="150">
                                     <use xlinkHref={cleanUrl(icon_Bf + '#decentralized')}/>
                                 </svg>
-                                <h6>Decentralized</h6>
+                                <h5>Decentralized</h5>
                                 <p>Users are empowered. They make the platform grow and they reap the benefits.</p>
                             </div>
                         </div>
@@ -109,7 +110,7 @@ export default class Home extends React.Component {
                                 <svg width="150" height="150">
                                     <use xlinkHref={cleanUrl(icon_Bf + '#fair')}/>
                                 </svg>
-                                <h6>Fair</h6>
+                                <h5>Fair</h5>
                                 <p>Revenue is distributed fairly between all actors.</p>
                             </div>
                         </div>
@@ -119,7 +120,7 @@ export default class Home extends React.Component {
                                 <svg width="150" height="150">
                                     <use xlinkHref={cleanUrl(icon_Bf + '#open')}/>
                                 </svg>
-                                <h6>Open</h6>
+                                <h5>Open</h5>
                                 <p>The source code is available on open source platforms. The platform is open to third-party developers.</p>
                             </div>
                         </div>
@@ -129,7 +130,7 @@ export default class Home extends React.Component {
                 <section id="bfio-tutorial">
                     <Cloud index="10" depth="0.2"/>
                     <h3>How does it work?</h3>
-                    <p>The platform uses smart contracts to handle the payment and the progression of the orders placed by customers.</p>
+                    <h6>The platform uses smart contracts to handle the payment and the progression of the orders placed by customers.</h6>
                     <Animation animation={Animation02} placeholders={Animation02_Placeholders}>
                         <Cloud index="6" animated="2"/>
                     </Animation>
@@ -140,6 +141,9 @@ export default class Home extends React.Component {
 
                 <section id="bfio-roadmap">
                     <div id="roadmap"></div>
+                    <h3>Development road map</h3>
+                    <h6>Our development schedule for the next two years.</h6>
+                    <Roadmap/>
                 </section>
 
                 <section id="bfio-team">
