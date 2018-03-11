@@ -1,7 +1,7 @@
 import React from 'react'
 import {cleanUrl} from '../../utils/Utils'
 
-import HeaderNavigationHandler from '../../components/header/handlers/HeaderNavigationHandler'
+import HeaderNavigationHandler from '../../components/header/HeaderNavigationHandler'
 
 import Cloud from '../../components/cloud/Cloud'
 import Animation from '../../components/animation/Animation'
@@ -138,8 +138,13 @@ export default class Home extends React.Component {
                     </p>
                 </section>
 
-                <div id="roadmap"></div>
-                <div id="team"></div>
+                <section id="bfio-roadmap">
+                    <div id="roadmap"></div>
+                </section>
+
+                <section id="bfio-team">
+                    <div id="team"></div>
+                </section>
 
             </div>
         )

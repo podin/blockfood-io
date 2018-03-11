@@ -1,5 +1,5 @@
 import * as _ from 'lodash'
-import {scrollTo} from '../../../utils/Utils'
+import {scrollTo} from '../../utils/Utils'
 
 export default class HeaderNavigationHandler {
     constructor() {
@@ -23,7 +23,7 @@ export default class HeaderNavigationHandler {
         _.map(document.querySelectorAll('#bfio-header-nav a'), linkElement => {
             if (linkElement.href.indexOf('#') !== -1) {
                 const anchor = linkElement.href.split('#')[1]
-                const anchorElement = document.querySelector(`#bfio-content #${anchor}`)
+                const anchorElement = document.querySelector(`#bfio-content #${anchor}`).parentElement
 
                 if (anchorElement) {
                     const linkHref = linkElement.href.split(window.location.origin)[1]
