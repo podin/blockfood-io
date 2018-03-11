@@ -10,7 +10,7 @@ import Footer from './components/footer/Footer'
 import './App.scss'
 
 const App = () => (
-    <Router scrollToHashOffset={-150}>
+    <Router scrollToHashDuration={0} scrollToHashOffset={-150}>
         <React.Fragment>
             <div id="bfio-background"></div>
             <Header/>

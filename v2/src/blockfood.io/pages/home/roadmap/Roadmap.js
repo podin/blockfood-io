@@ -42,21 +42,12 @@ export default class Roadmap extends React.Component {
         this.remainningInvisibleStepElements = this.containerElement.querySelectorAll('.step')
         this.markerElement = this.containerElement.querySelector('.marker')
 
-        this.timeoutInit = setTimeout(() => {
-            window.addEventListener('scroll', this.onScroll, false)
-            this.onScroll()
-
-            this.timeoutInit = null
-        }, 1000)
+        window.addEventListener('scroll', this.onScroll, false)
+        this.onScroll()
     }
 
     componentWillUnmount() {
-        if (this.timeoutInit) {
-            clearTimeout(this.timeoutInit)
-        }
-        else {
-            window.addEventListener('scroll', this.onScroll, false)
-        }
+        window.addEventListener('scroll', this.onScroll, false)
     }
 
     render() {
