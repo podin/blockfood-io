@@ -1,4 +1,5 @@
 import React from 'react'
+import {cleanUrl} from '../../utils/Utils'
 
 import HeaderNavigationHandler from '../../components/header/handlers/HeaderNavigationHandler'
 
@@ -20,6 +21,8 @@ import blockfoodWhoDoesItWork1 from '../../style/images/blockfood-who-does-it-wo
 import blockfoodWhoDoesItWork2 from '../../style/images/blockfood-who-does-it-work-2.png'
 import blockfoodWhoDoesItWork3 from '../../style/images/blockfood-who-does-it-work-3.png'
 import blockfoodWhoDoesItWork4 from '../../style/images/blockfood-who-does-it-work-4.png'
+
+import icon_Bf from '../../style/images/icon_Bf.svg'
 
 const Animation01_Placeholders = [
     {src: blockfoodIllustration, alt: 'BlockFood Illustration'}
@@ -80,6 +83,46 @@ export default class Home extends React.Component {
                     <div className="video">
                         <Cloud index="5"/>
                         <iframe src="https://www.youtube.com/embed/irqmb2AnBfY" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen=""></iframe>
+                    </div>
+                </section>
+
+                <section id="bfio-characteristics">
+                    <Cloud index="9" depth="0.1"/>
+                    <Cloud index="9"/>
+                    <Cloud index="8"/>
+                    <Cloud index="2"/>
+                    <h3>Key characteristics</h3>
+                    <div className="items">
+                        <div className="item">
+                            <div>
+                                <Cloud index="4"/>
+                                <svg width="150" height="150">
+                                    <use xlinkHref={cleanUrl(icon_Bf + '#decentralized')}/>
+                                </svg>
+                                <h6>Decentralized</h6>
+                                <p>Users are empowered. They make the platform grow and they reap the benefits.</p>
+                            </div>
+                        </div>
+                        <div className="item">
+                            <div>
+                                <Cloud index="6"/>
+                                <svg width="150" height="150">
+                                    <use xlinkHref={cleanUrl(icon_Bf + '#fair')}/>
+                                </svg>
+                                <h6>Fair</h6>
+                                <p>Revenue is distributed fairly between all actors.</p>
+                            </div>
+                        </div>
+                        <div className="item">
+                            <div>
+                                <Cloud index="4"/>
+                                <svg width="150" height="150">
+                                    <use xlinkHref={cleanUrl(icon_Bf + '#open')}/>
+                                </svg>
+                                <h6>Open</h6>
+                                <p>The source code is available on open source platforms. The platform is open to third-party developers.</p>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
