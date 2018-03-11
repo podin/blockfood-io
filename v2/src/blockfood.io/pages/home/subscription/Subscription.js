@@ -56,14 +56,14 @@ export default class Subscription extends React.Component {
                 clearSubscriptionStatus()
             }
 
-            this.input.blur()
+            this.inputElement.blur()
             this.setState({subscriptionStatus: SUBSCRIPTION_STATUS.PENDING})
             this.sendSubscriptionRequest(subscribeInputValue).then(onSuccess).catch(onFailure)
         }
     }
 
     componentDidMount() {
-        this.input = ReactDOM.findDOMNode(this).querySelector('input')
+        this.inputElement = ReactDOM.findDOMNode(this).querySelector('input')
     }
 
     render() {

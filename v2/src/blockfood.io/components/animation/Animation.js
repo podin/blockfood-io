@@ -10,13 +10,13 @@ export default class Animation extends React.Component {
     componentDidMount() {
         const {animation} = this.props
 
-        const canvas = ReactDOM.findDOMNode(this).querySelector('canvas')
+        const canvasElement = ReactDOM.findDOMNode(this).querySelector('canvas')
 
-        canvas.width = animation.properties.width
-        canvas.height = animation.properties.height
+        canvasElement.width = animation.properties.width
+        canvasElement.height = animation.properties.height
 
         const exportRoot = new animation[animation.name]()
-        this.stage = new createjs.Stage(canvas)
+        this.stage = new createjs.Stage(canvasElement)
         this.stage.addChild(exportRoot)
 
         window.createjs.Ticker.setFPS(animation.properties.fps)
