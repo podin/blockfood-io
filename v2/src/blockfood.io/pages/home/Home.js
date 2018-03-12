@@ -11,6 +11,7 @@ import {DATA_LINK_TELEGRAM, DATA_LINK_TWITTER, DATA_LINK_WHITEPAPER} from '../..
 
 import Subscription from './subscription/Subscription'
 import Roadmap from './roadmap/Roadmap'
+import Team from './team/Team'
 
 import './Home.scss'
 
@@ -151,7 +152,12 @@ export default class Home extends React.Component {
                 </section>
 
                 <section id="bfio-team">
-                    <div id="team"></div>
+                    <nav id="team"/>
+                    <Cloud index="3" depth="0"/>
+                    <Cloud index="7" depth="0.6"/>
+                    <Cloud index="1" depth="0.4"/>
+                    <h3>Team</h3>
+                    <Team/>
                 </section>
 
             </div>
