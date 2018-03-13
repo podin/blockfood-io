@@ -8,8 +8,14 @@ import Cloud from '../../components/cloud/Cloud'
 import Animation from '../../components/animation/Animation'
 import LinkWrapper from '../../components/linkWrapper/LinkWrapper'
 
-import {DATA_LINK_TELEGRAM, DATA_LINK_TWITTER, DATA_LINK_WHITEPAPER, DATA_LINK_CONTACT} from '../../data/DataLinks'
+import {
+    DATA_LINK_TELEGRAM, DATA_LINK_TWITTER, DATA_LINK_WHITEPAPER,
+    DATA_LINK_CONTACT,
+    DATA_LINKS_BROWSE
+} from '../../data/DataLinks'
 import DATA_EVENTS from '../../data/DataEvents'
+import DATA_PARTNERS from '../../data/DataPartners'
+import DATA_PRESS from '../../data/DataPress'
 
 import Subscription from './subscription/Subscription'
 import Roadmap from './roadmap/Roadmap'
@@ -18,13 +24,13 @@ import Team from './team/Team'
 import './Home.scss'
 
 import Animation01 from '../../style/animations/animation_01'
-import blockfoodIllustration from '../../style/images/blockfood-illustration.png'
+import blockfoodIllustration from '../../style/images/illustrations/blockfood-illustration.png'
 
 import Animation02 from '../../style/animations/animation_02'
-import blockfoodWhoDoesItWork1 from '../../style/images/blockfood-who-does-it-work-1.png'
-import blockfoodWhoDoesItWork2 from '../../style/images/blockfood-who-does-it-work-2.png'
-import blockfoodWhoDoesItWork3 from '../../style/images/blockfood-who-does-it-work-3.png'
-import blockfoodWhoDoesItWork4 from '../../style/images/blockfood-who-does-it-work-4.png'
+import blockfoodWhoDoesItWork1 from '../../style/images/illustrations/blockfood-who-does-it-work-1.png'
+import blockfoodWhoDoesItWork2 from '../../style/images/illustrations/blockfood-who-does-it-work-2.png'
+import blockfoodWhoDoesItWork3 from '../../style/images/illustrations/blockfood-who-does-it-work-3.png'
+import blockfoodWhoDoesItWork4 from '../../style/images/illustrations/blockfood-who-does-it-work-4.png'
 
 import icon_Bf from '../../style/images/icon_Bf.svg'
 
@@ -167,7 +173,7 @@ export default class Home extends React.Component {
                     <Cloud index="5" depth="0.3"/>
                     <h3>Events</h3>
                     {_.map(DATA_EVENTS, (event, index) => (
-                        <div key={event.title} className="event">
+                        <div key={event.id} className="event">
                             {event.image && (
                                 <div className="image">
                                     <img src={cleanUrl(event.image)} alt={event.title}/>
@@ -183,6 +189,36 @@ export default class Home extends React.Component {
                         <div className="title">Want to invite us?</div>
                         <div className="date">Reach us at {LinkWrapper.fromData(DATA_LINK_CONTACT)}</div>
                     </div>
+                </section>
+
+                <section id="bfio-links">
+                    <Cloud index="4" depth="0.8"/>
+                    <Cloud index="10" depth="0.7"/>
+                    <h3>Browse our links</h3>
+                    <div className="links">
+                        {_.map(DATA_LINKS_BROWSE, link => (
+                            <div key={link.id} className="link">
+                                <div>
+                                    <span>{link.tag}</span>
+                                    {LinkWrapper.fromData(link)}
+                                </div>
+                                <i className="fas fa-external-link-square-alt"/>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                <section id="bfio-partners">
+                    <h3>Our Partners</h3>
+                    {_.map(DATA_PARTNERS, partner => (
+                       <a key={partner.id} href={partner.url} target="_blank">
+                           <img src={cleanUrl(partner.image)} alt={partner.name}/>
+                       </a>
+                    ))}
+                </section>
+
+                <section id="bfio-press">
+                    <h3>BlockFood in the press</h3>
                 </section>
 
             </div>

@@ -19,6 +19,13 @@ export const DATA_LINK_GITHUB = {id: 'github', href: 'https://github.com/BlockFo
 export const DATA_LINK_MEDIUM = {id: 'medium', href: 'https://medium.com/blockfood', icon: 'fab fa-medium-m'}
 export const DATA_LINK_TELEGRAM = {id: 'telegram', href: 'https://t.me/blockfood', icon: 'fab fa-telegram'}
 
+export const DATA_LINK_BLOG_INTRO = {id: 'blog-intro', href: 'https://medium.com/blockfood/announcing-blockfood-d7c3b3c67666', label: 'Introducing BlockFood', tag: 'Blog'}
+export const DATA_LINK_BITCOINTALK_ANNOUNCE = {id: 'bitcointalk-announce', href: 'https://bitcointalk.org/index.php?topic=2633056.0', label: 'BitcoinTalk Announce', tag: 'Thread'}
+export const DATA_LINK_BITCOINTALK_BOUNTY = {id: 'bitcointalk-bounty', href: 'https://bitcointalk.org/index.php?topic=2645612', label: 'BitcoinTalk Bounty Campaign', tag: 'Thread'}
+export const DATA_LINK_GITHUB_PRE_SALE_SMART_CONTRACT = {id: 'github-pre-sale', href: 'https://github.com/BlockFood/smart-contract-pre-sale', label: 'Pre-Sale Smart Contract', tag: 'GitHub'}
+export const DATA_LINK_GITHUB_SITE = {id: 'github-site', href: 'https://github.com/BlockFood/blockfood-io', label: 'BlockFood.io source code', tag: 'GitHub'}
+export const DATA_LINK_GITHUB_API_TOKEN_SALE = {id: 'github-token-sale', href: 'https://github.com/BlockFood/api-token-sale', label: 'API for our Token-Sale', tag: 'GitHub'}
+
 export const DATA_LINKS_HEADER_NAV = [
     DATA_LINK_ABOUT,
     DATA_LINK_ROADMAP,
@@ -47,4 +54,13 @@ export const DATA_LINKS_LEGAL = [
     DATA_LINK_TERMS,
     DATA_LINK_PRIVACY,
     DATA_LINK_DISCLAIMER
+]
+
+export const DATA_LINKS_BROWSE = [
+    DATA_LINK_BLOG_INTRO,
+    DATA_LINK_BITCOINTALK_ANNOUNCE,
+    DATA_LINK_BITCOINTALK_BOUNTY,
+    DATA_LINK_GITHUB_PRE_SALE_SMART_CONTRACT,
+    DATA_LINK_GITHUB_SITE,
+    DATA_LINK_GITHUB_API_TOKEN_SALE
 ]
