@@ -13,7 +13,7 @@ export default class Cloud extends React.Component {
         super(props)
 
         this.onScroll = this.onScroll.bind(this)
-        this.onResize = this.onResize.bind(this)
+        this.onResize = _.debounce(this.onResize.bind(this), 0)
     }
 
     onScroll() {
@@ -21,6 +21,9 @@ export default class Cloud extends React.Component {
 
         if (scrollValue >= this.threshold) {
             this.parallaxElement.style.transform = `translateY(${this.props.depth * (scrollValue - this.threshold)}px)`
+        }
+        else {
+            this.parallaxElement.style.transform = `translateY(0px)`
         }
     }
 

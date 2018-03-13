@@ -1,3 +1,4 @@
+import * as _ from 'lodash'
 import React from 'react'
 import {cleanUrl} from '../../utils/Utils'
 
@@ -7,7 +8,8 @@ import Cloud from '../../components/cloud/Cloud'
 import Animation from '../../components/animation/Animation'
 import LinkWrapper from '../../components/linkWrapper/LinkWrapper'
 
-import {DATA_LINK_TELEGRAM, DATA_LINK_TWITTER, DATA_LINK_WHITEPAPER} from '../../data/DataLinks'
+import {DATA_LINK_TELEGRAM, DATA_LINK_TWITTER, DATA_LINK_WHITEPAPER, DATA_LINK_CONTACT} from '../../data/DataLinks'
+import DATA_EVENTS from '../../data/DataEvents'
 
 import Subscription from './subscription/Subscription'
 import Roadmap from './roadmap/Roadmap'
@@ -155,9 +157,32 @@ export default class Home extends React.Component {
                     <nav id="team"/>
                     <Cloud index="3" depth="0"/>
                     <Cloud index="7" depth="0.6"/>
-                    <Cloud index="1" depth="0.4"/>
+                    <Cloud index="1" depth="0.45"/>
                     <h3>Team</h3>
                     <Team/>
+                </section>
+
+                <section id="bfio-events">
+                    <Cloud index="2" depth="0.2"/>
+                    <Cloud index="5" depth="0.3"/>
+                    <h3>Events</h3>
+                    {_.map(DATA_EVENTS, (event, index) => (
+                        <div key={event.title} className="event">
+                            {event.image && (
+                                <div className="image">
+                                    <img src={cleanUrl(event.image)} alt={event.title}/>
+                                    {index === 0 && <Cloud index="5" depth="0"/>}
+                                </div>
+                            )}
+                            <div className="title">{event.title}</div>
+                            <div className="location">{event.location}</div>
+                            <div className="date">{event.date}</div>
+                        </div>
+                    ))}
+                    <div className="event">
+                        <div className="title">Want to invite us?</div>
+                        <div className="date">Reach us at {LinkWrapper.fromData(DATA_LINK_CONTACT)}</div>
+                    </div>
                 </section>
 
             </div>
