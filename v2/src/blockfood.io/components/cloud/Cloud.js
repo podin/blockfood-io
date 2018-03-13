@@ -7,10 +7,14 @@ import './Cloud.scss'
 
 import icon_Bf from '../../style/images/icon_Bf.svg'
 
+const STABILIZATION_THRESHOLD = 10
+
 export default class Cloud extends React.Component {
 
     constructor(props) {
         super(props)
+
+        this.stabilizedCount = 0
 
         this.onScroll = this.onScroll.bind(this)
         this.onResize = _.debounce(this.onResize.bind(this), 0)
@@ -31,6 +35,23 @@ export default class Cloud extends React.Component {
         const offsetTop = this.containerElement.getBoundingClientRect().top + getScrollValue()
         this.threshold = Math.max(0, offsetTop - window.innerHeight)
 
+        if (this.stabilizedCount < STABILIZATION_THRESHOLD) {
+            if (offsetTop === this.previousOffsetTop && this.threshold === this.previousThreshold) {
+                this.stabilizedCount++;
+
+                if (this.stabilizedCount === STABILIZATION_THRESHOLD) {
+                    clearInterval(this.intervalStabilization)
+                    this.intervalStabilization = null
+                }
+            }
+            else {
+                this.stabilizedCount = 0
+            }
+        }
+
+        this.previousOffsetTop = offsetTop
+        this.previousThreshold = this.threshold
+
         this.onScroll()
     }
 
@@ -43,6 +64,7 @@ export default class Cloud extends React.Component {
             window.addEventListener('resize', this.onResize, false)
 
             this.onResize()
+            this.intervalStabilization = setInterval(this.onResize.bind(this), 500)
         }
     }
 
@@ -50,6 +72,8 @@ export default class Cloud extends React.Component {
         if (this.props.depth) {
             window.addEventListener('scroll', this.onScroll, false)
             window.addEventListener('resize', this.onResize, false)
+
+            this.intervalStabilization && clearInterval(this.intervalStabilization)
         }
     }
 
