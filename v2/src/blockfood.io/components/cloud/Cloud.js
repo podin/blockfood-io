@@ -16,11 +16,11 @@ export default class Cloud extends React.Component {
 
         this.stabilizedCount = 0
 
-        this.onScroll = this.onScroll.bind(this)
-        this.onResize = _.debounce(this.onResize.bind(this), 0)
+        this.setPosition = this.setPosition.bind(this)
+        this.resetPosition = this.resetPosition.bind(this)
     }
 
-    onScroll() {
+    setPosition() {
         const scrollValue = getScrollValue()
 
         if (scrollValue >= this.threshold) {
@@ -31,28 +31,36 @@ export default class Cloud extends React.Component {
         }
     }
 
-    onResize() {
+    resetPosition() {
+        this.intervalStabilization && clearInterval(this.intervalStabilization)
+        this.stabilizedCount = 0
+
+        const offsetTop = this.previousOffsetTop = this.containerElement.getBoundingClientRect().top + getScrollValue()
+        this.threshold = this.previousThreshold = Math.max(0, offsetTop - window.innerHeight)
+
+        this.setPosition()
+
+        this.intervalStabilization = setInterval(this.stabilize.bind(this), 500)
+    }
+
+    stabilize() {
         const offsetTop = this.containerElement.getBoundingClientRect().top + getScrollValue()
-        this.threshold = Math.max(0, offsetTop - window.innerHeight)
+        const threshold = Math.max(0, offsetTop - window.innerHeight)
 
-        if (this.stabilizedCount < STABILIZATION_THRESHOLD) {
-            if (offsetTop === this.previousOffsetTop && this.threshold === this.previousThreshold) {
-                this.stabilizedCount++;
+        if (offsetTop === this.previousOffsetTop && threshold === this.previousThreshold) {
+            this.stabilizedCount++;
 
-                if (this.stabilizedCount === STABILIZATION_THRESHOLD) {
-                    clearInterval(this.intervalStabilization)
-                    this.intervalStabilization = null
-                }
-            }
-            else {
-                this.stabilizedCount = 0
+            this.previousOffsetTop = offsetTop
+            this.previousThreshold = threshold
+
+            if (this.stabilizedCount === STABILIZATION_THRESHOLD) {
+                clearInterval(this.intervalStabilization)
+                this.intervalStabilization = null
             }
         }
-
-        this.previousOffsetTop = offsetTop
-        this.previousThreshold = this.threshold
-
-        this.onScroll()
+        else {
+            this.resetPosition()
+        }
     }
 
     componentDidMount() {
@@ -60,18 +68,17 @@ export default class Cloud extends React.Component {
             this.containerElement = ReactDOM.findDOMNode(this)
             this.parallaxElement = this.containerElement.querySelector('.cloud-parallax')
 
-            window.addEventListener('scroll', this.onScroll, false)
-            window.addEventListener('resize', this.onResize, false)
+            window.addEventListener('scroll', this.setPosition, false)
+            window.addEventListener('resize', this.resetPosition, false)
 
-            this.onResize()
-            this.intervalStabilization = setInterval(this.onResize.bind(this), 500)
+            this.resetPosition()
         }
     }
 
     componentWillUnmount() {
         if (this.props.depth) {
-            window.addEventListener('scroll', this.onScroll, false)
-            window.addEventListener('resize', this.onResize, false)
+            window.addEventListener('scroll', this.setPosition, false)
+            window.addEventListener('resize', this.resetPosition, false)
 
             this.intervalStabilization && clearInterval(this.intervalStabilization)
         }
