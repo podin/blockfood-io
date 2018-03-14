@@ -56,20 +56,20 @@ export default class Roadmap extends React.Component {
         return (
             <div className="roadmap-timeline">
                 <div className="marker"></div>
-                {_.map(DATA_ROAD_MAP, year => (
-                    <div key={year.date} className="item">
+                {_.map(DATA_ROAD_MAP, (year, index) => (
+                    <div key={index} className="item">
                         <div className="node">
                             <div>{year.date}</div>
                         </div>
-                        {_.map(year.content, (step, stepIndex) => (
-                            <React.Fragment key={stepIndex}>
+                        {_.map(year.content, (step, index) => (
+                            <React.Fragment key={index}>
                                 <div className="step-wrapper">
-                                    <div className={'step-overflow ' + (stepIndex % 2 === 0 ? 'left' : 'right')}>
+                                    <div className={'step-overflow ' + (index % 2 === 0 ? 'left' : 'right')}>
                                         <div className="step">
                                             <div className="step-date">{step.date}</div>
                                             <ul>
-                                                {_.map(step.content, (task, taskIndex) => (
-                                                    <li key={taskIndex}>
+                                                {_.map(step.content, (task, index) => (
+                                                    <li key={index}>
                                                         {task}
                                                     </li>
                                                 ))}

@@ -13,8 +13,8 @@ export default class Team extends React.Component {
     render() {
         return (
             <div className="team-grid">
-                {_.map(DATA_TEAM, member => (
-                    <div key={member.name} className="member">
+                {_.map(DATA_TEAM, (member, index) => (
+                    <div key={index} className="member">
                         <img className="avatar" src={cleanUrl(member.image)}
                              title={this.getFirstName(member)} alt={this.getFirstName(member)}/>
                         <div className="name">
@@ -23,8 +23,8 @@ export default class Team extends React.Component {
                         </div>
                         <div className="role">{member.role}</div>
                         <div className="links">
-                            {_.map(member.links, link => (
-                                <a key={link.type} href={link.url} target="_blank">
+                            {_.map(member.links, (link, index) => (
+                                <a key={index} href={link.url} target="_blank">
                                     {link.type === 'linkedin' && <i className="fab fa-linkedin-in"/>}
                                 </a>
                             ))}

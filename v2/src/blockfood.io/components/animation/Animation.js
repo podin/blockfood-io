@@ -33,8 +33,8 @@ export default class Animation extends React.Component {
         return (
             <div className="animation">
                 {this.props.children}
-                {_.map(placeholders, ({src, alt}) => (
-                    <img key={src} src={cleanUrl(src)} alt={alt}/>
+                {_.map(placeholders, ({src, alt}, index) => (
+                    <img key={index} src={cleanUrl(src)} alt={alt}/>
                 ))}
                 <canvas/>
             </div>

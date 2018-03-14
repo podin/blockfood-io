@@ -32,14 +32,14 @@ LinkWrapper.fromData = (_data, children = null, dataOverride = {}) => {
     })
 
     if (children) {
-        return _.map(data, dataItem => (
-            <LinkWrapper key={dataItem.id} {...dataItem}>
+        return _.map(data, (dataItem, index) => (
+            <LinkWrapper key={index} {...dataItem}>
                 {children}
             </LinkWrapper>
         ))
     }
     else {
-        return _.map(data, dataItem => <LinkWrapper key={dataItem.id} {...dataItem}/>)
+        return _.map(data, (dataItem, index) => <LinkWrapper key={index} {...dataItem}/>)
     }
 }
 

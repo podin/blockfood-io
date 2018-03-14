@@ -173,7 +173,7 @@ export default class Home extends React.Component {
                     <Cloud index="5" depth="0.3"/>
                     <h3>Events</h3>
                     {_.map(DATA_EVENTS, (event, index) => (
-                        <div key={event.id} className="event">
+                        <div key={index} className="event">
                             {event.image && (
                                 <div className="image">
                                     <img src={cleanUrl(event.image)} alt={event.title}/>
@@ -196,8 +196,8 @@ export default class Home extends React.Component {
                     <Cloud index="10" depth="0.7"/>
                     <h3>Browse our links</h3>
                     <div className="links">
-                        {_.map(DATA_LINKS_BROWSE, link => (
-                            <div key={link.id} className="link">
+                        {_.map(DATA_LINKS_BROWSE, (link, index) => (
+                            <div key={index} className="link">
                                 <div>
                                     <span>{link.tag}</span>
                                     {LinkWrapper.fromData(link)}
@@ -210,8 +210,8 @@ export default class Home extends React.Component {
 
                 <section id="bfio-partners">
                     <h3>Our Partners</h3>
-                    {_.map(DATA_PARTNERS, partner => (
-                       <a key={partner.id} href={partner.url} target="_blank">
+                    {_.map(DATA_PARTNERS, (partner, index) => (
+                       <a key={index} href={partner.url} target="_blank">
                            <img src={cleanUrl(partner.image)} alt={partner.name}/>
                        </a>
                     ))}
