@@ -1,5 +1,8 @@
 import * as _ from 'lodash'
 
+import icoholderImage from '../style/images/logos/icoholder.svg'
+import clearifyImage from '../style/images/logos/clearify.png'
+
 export const DATA_LINK_HOME = {to: '/', label: 'Home'}
 export const DATA_LINK_ABOUT = {to: '/#about', label: 'Project'}
 export const DATA_LINK_ROADMAP = {to: '/#roadmap', label: 'Road map'}
@@ -25,6 +28,9 @@ export const DATA_LINK_BITCOINTALK_BOUNTY = {href: 'https://bitcointalk.org/inde
 export const DATA_LINK_GITHUB_PRE_SALE_SMART_CONTRACT = {href: 'https://github.com/BlockFood/smart-contract-pre-sale', label: 'Pre-Sale Smart Contract', tag: 'GitHub'}
 export const DATA_LINK_GITHUB_SITE = {href: 'https://github.com/BlockFood/blockfood-io', label: 'BlockFood.io source code', tag: 'GitHub'}
 export const DATA_LINK_GITHUB_API_TOKEN_SALE = {href: 'https://github.com/BlockFood/api-token-sale', label: 'API for our Token-Sale', tag: 'GitHub'}
+
+export const DATA_LINK_ICOHOLDER = {href: 'https://icoholder.com/en/blockfood-17371', label: 'Listed on ICOHOLDER', image: icoholderImage}
+export const DATA_LINK_CLEARIFY = {href: 'https://clearify.io/', label: 'Clearify', image: clearifyImage}
 
 export const DATA_LINKS_HEADER_NAV = [
     DATA_LINK_ABOUT,
@@ -63,4 +69,9 @@ export const DATA_LINKS_BROWSE = [
     DATA_LINK_GITHUB_PRE_SALE_SMART_CONTRACT,
     DATA_LINK_GITHUB_SITE,
     DATA_LINK_GITHUB_API_TOKEN_SALE
+]
+
+export const DATA_LINKS_ICO_LISTINGS = [
+    DATA_LINK_ICOHOLDER,
+    DATA_LINK_CLEARIFY
 ]

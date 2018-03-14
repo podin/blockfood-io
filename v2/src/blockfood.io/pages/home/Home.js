@@ -11,7 +11,8 @@ import LinkWrapper from '../../components/linkWrapper/LinkWrapper'
 import {
     DATA_LINK_TELEGRAM, DATA_LINK_TWITTER, DATA_LINK_WHITEPAPER,
     DATA_LINK_CONTACT,
-    DATA_LINKS_BROWSE
+    DATA_LINKS_BROWSE,
+    DATA_LINKS_ICO_LISTINGS
 } from '../../data/DataLinks'
 import DATA_EVENTS from '../../data/DataEvents'
 import DATA_PARTNERS from '../../data/DataPartners'
@@ -192,8 +193,8 @@ export default class Home extends React.Component {
                 </section>
 
                 <section id="bfio-links">
-                    <Cloud index="4" depth="0.8"/>
-                    <Cloud index="10" depth="0.7"/>
+                    <Cloud index="4" depth="0.75"/>
+                    <Cloud index="10" depth="0.85"/>
                     <h3>Browse our links</h3>
                     <div className="links">
                         {_.map(DATA_LINKS_BROWSE, (link, index) => (
@@ -220,6 +221,14 @@ export default class Home extends React.Component {
                 <section id="bfio-press">
                     <h3>BlockFood in the press</h3>
                     <Press/>
+                </section>
+
+                <section id="bfio-ico-listings">
+                    {_.map(DATA_LINKS_ICO_LISTINGS, (ico, index) => (
+                        <a key={index} href={ico.href} target="_blank">
+                            <img src={cleanUrl(ico.image)} alt={ico.label}/>
+                        </a>
+                    ))}
                 </section>
 
             </div>

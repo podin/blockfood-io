@@ -541,7 +541,7 @@
 
   #bfio-links {
     .cloud:nth-of-type(1) {
-      top: -900px;
+      top: -800px;
       left: -250px;
     }
 
@@ -622,13 +622,34 @@
         padding: 5px;
         width: 400px;
         max-width: 100%;
-        border: 4px solid transparent;
-        border-radius: 5px;
         box-sizing: border-box;
+      }
+    }
+  }
 
-        &:hover {
-          border-color: #111c28;
-        }
+  #bfio-ico-listings {
+    margin-top: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    a {
+      img {
+        height: 150px;
+        max-width: 100%;
+      }
+
+      &:not(:first-of-type) {
+        margin-left: 150px;
+      }
+    }
+
+    @media screen and (max-width: 992px) {
+      flex-direction: column;
+
+      a:not(:first-of-type) {
+        margin-left: 0;
+        margin-top: 50px;
       }
     }
   }
