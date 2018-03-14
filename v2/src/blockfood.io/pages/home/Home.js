@@ -15,11 +15,11 @@ import {
 } from '../../data/DataLinks'
 import DATA_EVENTS from '../../data/DataEvents'
 import DATA_PARTNERS from '../../data/DataPartners'
-import DATA_PRESS from '../../data/DataPress'
 
 import Subscription from './subscription/Subscription'
 import Roadmap from './roadmap/Roadmap'
 import Team from './team/Team'
+import Press from './press/Press'
 
 import './Home.scss'
 
@@ -219,6 +219,7 @@ export default class Home extends React.Component {
 
                 <section id="bfio-press">
                     <h3>BlockFood in the press</h3>
+                    <Press/>
                 </section>
 
             </div>

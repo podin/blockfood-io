@@ -1,10 +1,10 @@
 import ccinewsImage from '../style/images/logos/ccinews.png'
 import bitcoinerImage from '../style/images/logos/bitcoiner.today.png'
+import stevenmaleImage from '../style/images/logos/stevenmale.png'
 import criptoeconomiaImage from '../style/images/logos/criptoeconomia.jpg'
 
 export default [
     {
-        id: 'ccinews',
         title: 'BlockFood – The First Decentralized Food Ordering App!',
         image: ccinewsImage,
         langs: [
@@ -15,7 +15,6 @@ export default [
         ]
     },
     {
-        id: 'bitcoiner',
         title: 'ICOs: BlockFood, the world’s first decentralized food ordering platform',
         image: bitcoinerImage,
         langs: [
@@ -30,7 +29,16 @@ export default [
         ]
     },
     {
-        id: 'criptoeconomia',
+        title: 'Blockfood – the first decentralised food-ordering platform',
+        image: stevenmaleImage,
+        langs: [
+            {
+                code: 'English',
+                url: 'http://www.stevenmale.com/blog/blockfood-interview'
+            }
+        ]
+    },
+    {
         title: 'Conheça o BlockFood: plataforma descentralizada de delivery baseada em blockchain',
         image: criptoeconomiaImage,
         langs: [
