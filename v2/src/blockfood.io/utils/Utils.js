@@ -1,4 +1,3 @@
-import * as _ from 'lodash'
 import {scrollTo as _scrollTo} from 'react-static'
 
 export const cleanUrl = (url) => url.replace(/\\/g, '/')
@@ -16,6 +15,6 @@ export const scrollTo = (element, options) => {
     const scrollTarget = typeof element === 'number' ? parseInt(element) : getTop()
 
     if (scrollTarget !== getScrollValue()) {
-        _scrollTo(element, _.merge(options, {duration: 0}))
+        _scrollTo(element, options)
     }
 }

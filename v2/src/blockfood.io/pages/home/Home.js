@@ -60,20 +60,20 @@ export default class Home extends React.Component {
             <div id="bfio-home">
 
                 <section id="bfio-intro">
-                    <Cloud index="2" animated="1" depth="0.9"/>
+                    <Cloud className="cloud-1" index="2"/>
                     <div id="bfio-title">
-                        <Cloud index="9" animated="2"/>
+                        <Cloud className="cloud-2" index="9" animated="2"/>
                         <h1>BlockFood</h1>
                         <h2>Food Delivery. Reinvented.</h2>
                     </div>
                     <Animation animation={Animation01} placeholders={Animation01_Placeholders}>
-                        <Cloud index="4" animated="3"/>
+                        <Cloud className="cloud-3" index="4" animated="3"/>
                     </Animation>
                 </section>
 
                 <section id="bfio-subscribe">
                     <div id="subscribe"></div>
-                    <Cloud index="1" depth="0.8"/>
+                    <Cloud className="cloud-1" index="1"/>
                     <h3>Join our whitelist</h3>
                     <Subscription/>
                     <div className="social">
@@ -84,6 +84,8 @@ export default class Home extends React.Component {
 
                 <section id="bfio-project">
                     <nav id="about"/>
+                    <Cloud className="cloud-1" index="3"/>
+                    <Cloud className="cloud-2" index="4"/>
                     <h3>What is BlockFood?</h3>
                     <h4>BlockFood is the world's first <b>decentralized food ordering & delivery platform</b>.</h4>
                     <p>
@@ -92,21 +94,21 @@ export default class Home extends React.Component {
                         BlockFood is the first project from the <b>Open Sharing Economy foundation</b>.
                     </p>
                     <div className="video">
-                        <Cloud index="5"/>
+                        <Cloud className="cloud-3" index="5"/>
                         <iframe src="https://www.youtube.com/embed/irqmb2AnBfY" frameBorder="0" allow="encrypted-media" allowFullScreen=""></iframe>
                     </div>
                 </section>
 
                 <section id="bfio-characteristics">
-                    <Cloud index="9" depth="0.2"/>
-                    <Cloud index="9"/>
-                    <Cloud index="8"/>
-                    <Cloud index="2"/>
+                    <Cloud className="cloud-1" index="9"/>
+                    <Cloud className="cloud-2" index="9"/>
+                    <Cloud className="cloud-3" index="8"/>
+                    <Cloud className="cloud-4" index="2"/>
                     <h3>Key characteristics</h3>
                     <div className="items">
                         <div className="item">
                             <div>
-                                <Cloud index="4"/>
+                                <Cloud className="cloud-5" index="4"/>
                                 <svg width="150" height="150">
                                     <use xlinkHref={cleanUrl(icon_Bf + '#decentralized')}/>
                                 </svg>
@@ -116,7 +118,7 @@ export default class Home extends React.Component {
                         </div>
                         <div className="item">
                             <div>
-                                <Cloud index="6"/>
+                                <Cloud className="cloud-6" index="6"/>
                                 <svg width="150" height="150">
                                     <use xlinkHref={cleanUrl(icon_Bf + '#fair')}/>
                                 </svg>
@@ -126,7 +128,7 @@ export default class Home extends React.Component {
                         </div>
                         <div className="item">
                             <div>
-                                <Cloud index="4"/>
+                                <Cloud className="cloud-7" index="4"/>
                                 <svg width="150" height="150">
                                     <use xlinkHref={cleanUrl(icon_Bf + '#open')}/>
                                 </svg>
@@ -138,11 +140,11 @@ export default class Home extends React.Component {
                 </section>
 
                 <section id="bfio-tutorial">
-                    <Cloud index="10" depth="0.4"/>
+                    <Cloud className="cloud-1" index="10"/>
                     <h3>How does it work?</h3>
                     <h6>The platform uses smart contracts to handle the payment and the progression of the orders placed by customers.</h6>
                     <Animation animation={Animation02} placeholders={Animation02_Placeholders}>
-                        <Cloud index="6" animated="2"/>
+                        <Cloud className="cloud-2" index="6" animated="2"/>
                     </Animation>
                     <p>
                         To get more details on BlockFood, browse our {LinkWrapper.fromData(DATA_LINK_WHITEPAPER)}
@@ -151,10 +153,9 @@ export default class Home extends React.Component {
 
                 <section id="bfio-roadmap">
                     <nav id="roadmap"/>
-                    <Cloud index="2" depth="0.5"/>
-                    <Cloud index="8" depth="0"/>
-                    <Cloud index="9" depth="0.2"/>
-                    <Cloud index="4" depth="0.6"/>
+                    <Cloud className="cloud-1" index="8"/>
+                    <Cloud className="cloud-2" index="9"/>
+                    <Cloud className="cloud-3" index="4"/>
                     <h3>Development road map</h3>
                     <h6>Our development schedule for the next two years.</h6>
                     <Roadmap/>
@@ -162,23 +163,22 @@ export default class Home extends React.Component {
 
                 <section id="bfio-team">
                     <nav id="team"/>
-                    <Cloud index="3" depth="0"/>
-                    <Cloud index="7" depth="0.6"/>
-                    <Cloud index="1" depth="0.45"/>
+                    <Cloud className="cloud-1" index="3"/>
+                    <Cloud className="cloud-2" index="1"/>
                     <h3>Team</h3>
                     <Team/>
                 </section>
 
                 <section id="bfio-events">
-                    <Cloud index="2" depth="0.2"/>
-                    <Cloud index="5" depth="0.3"/>
+                    <Cloud className="cloud-1" index="2"/>
+                    <Cloud className="cloud-2" index="5"/>
                     <h3>Events</h3>
                     {_.map(DATA_EVENTS, (event, index) => (
                         <div key={index} className="event">
                             {event.image && (
                                 <div className="image">
                                     <img src={cleanUrl(event.image)} alt={event.title}/>
-                                    {index === 0 && <Cloud index="5" depth="0"/>}
+                                    {index === 0 && <Cloud className="cloud-3" index="5"/>}
                                 </div>
                             )}
                             <div className="title">{event.title}</div>
@@ -193,8 +193,8 @@ export default class Home extends React.Component {
                 </section>
 
                 <section id="bfio-links">
-                    <Cloud index="4" depth="0.75"/>
-                    <Cloud index="10" depth="0.85"/>
+                    <Cloud className="cloud-1" index="4"/>
+                    <Cloud className="cloud-2" index="10"/>
                     <h3>Browse our links</h3>
                     <div className="links">
                         {_.map(DATA_LINKS_BROWSE, (link, index) => (
@@ -219,6 +219,7 @@ export default class Home extends React.Component {
                 </section>
 
                 <section id="bfio-press">
+                    <Cloud className="cloud-1" index="3"/>
                     <h3>BlockFood in the press</h3>
                     <Press/>
                 </section>
