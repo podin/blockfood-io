@@ -1,5 +1,5 @@
 import React from 'react'
-import {Router} from 'react-static'
+import {Router, Route} from 'react-static'
 import Routes from 'react-static-routes'
 
 import Loader from './components/loader/Loader'
@@ -9,6 +9,16 @@ import Footer from './components/footer/Footer'
 
 import './App.scss'
 
+// Fix a react-static issue causing to create a new component everytime the hash change
+const componentsByTemplateID = {}
+const RenderRoutes = ({getComponentForPath}) => (
+    <Route path='*' render={props => {
+        const path = props.location.pathname
+        const Comp = componentsByTemplateID[path] = componentsByTemplateID[path] || getComponentForPath(path)
+        return <Comp key={props.location.pathname} {...props} />
+      }}/>
+)
+
 const App = () => (
     <Router scrollToHashDuration={0} scrollToHashOffset={-150}>
         <React.Fragment>
@@ -16,7 +26,7 @@ const App = () => (
             <Header/>
             <div id="bfio-content">
                 <div id="bfio-content-width">
-                    <Routes/>
+                    <Routes render={RenderRoutes}/>
                 </div>
                 <Footer/>
             </div>
